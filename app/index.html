@@ -6,7 +6,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <title>TravelMania</title>
   </head>
 
@@ -25,179 +26,162 @@
         </nav>
       </div>
 
-      <!-- <div id="homeSlideShow" class="carousel slide carousel-fade" data-ride="carousel">
-        <ul class="carousel-indicators">
-          <li data-target="#homeSlideShow" data-slide-to="0" class="active"></li>
-          <li data-target="#homeSlideShow" data-slide-to="1"></li>
-          <li data-target="#homeSlideShow" data-slide-to="2"></li>
-          <li data-target="#homeSlideShow" data-slide-to="3"></li>
-          <li data-target="#homeSlideShow" data-slide-to="4"></li>
-          <li data-target="#homeSlideShow" data-slide-to="5"></li>
-        </ul>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="images/01-greece.jpg">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Greece</h3>
-              <p>Santorini</p>
-            </div>
+      <div class="jumbotron">
+        <h3>Search for your trip</h3>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+            <input type="text" class="form-control search-slt" placeholder="Source">
           </div>
-
-          <div class="carousel-item">
-            <img class="d-block w-100" src="images/02-rome.jpg">
-            <div class="carousel-caption d-none d-md-block">
-            <h3>Italy</h3>
-            <p>Rome</p>
+          <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+            <input type="text" class="form-control search-slt" placeholder="Destination">
           </div>
+          <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+            <select class="form-control search-slt" id="exampleFormControlSelect1">
+              <option>Number of Passengers</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
           </div>
-
-          <div class="carousel-item">
-            <img class="d-block w-100" src="images/03-japan.jpg">
-            <div class="carousel-caption d-none d-md-block">
-            <h3>Japan</h3>
-            <p>Tokyo</p>
+          <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+            <button type="button" class="btn btn-danger wrn-btn">Search</button>
           </div>
-          </div>
-
-          <div class="carousel-item">
-            <img class="d-block w-100" src="images/04-dubai.jpg">
-            <div class="carousel-caption d-none d-md-block">
-            <h3>UAE</h3>
-            <p>Dubai</p>
-          </div>
-          </div>
-
-          <div class="carousel-item">
-            <img class="d-block w-100" src="images/05-london.jpg">
-            <div class="carousel-caption d-none d-md-block">
-            <h3>UK</h3>
-            <p>London</p>
-          </div>
-          </div>
-
-          <div class="carousel-item">
-            <img class="d-block w-100" src="images/06-australia.jpg">
-            <div class="carousel-caption d-none d-md-block">
-            <h3>Australia</h3>
-            <p>Sydney</p>
-          </div>
-          </div>
-        </div> -->
-
-        <a class="carousel-control-prev" href="#homeSlideShow" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#homeSlideShow" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
+        </div>
       </div>
 
-      <!-- <div class="active-pink-3 active-pink-4 mb-4">
-        <input class="form-control" type="text" placeholder="Source" aria-label="Search">
-      </div>
-
-      <div class="active-pink-3 active-pink-4 mb-4">
-        <input class="form-control" type="text" placeholder="Destination" aria-label="Search">
-      </div> -->
-
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div id="slideShow" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="images/sant.PNG" width="1536px" height="450px" alt="...">
+                <img class="d-block w-100" src="images/sant.PNG" width="1536px" height="450px" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Greece</h3>
                   <p>Santorini</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/rom.PNG" width="1536px" height="450px" alt="...">
+                <img class="d-block w-100" src="images/rom.PNG" width="1536px" height="450px" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Italy</h3>
                   <p>Rome</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/tok.PNG" alt="..." width="1536px" height="450px">
+                <img class="d-block w-100" src="images/tok.PNG" alt="..." width="1536px" height="450px">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Japan</h3>
                   <p>Tokyo</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/lond.PNG" width="1536px" height="450px" alt="..." height="30%">
+                <img class="d-block w-100" src="images/lond.PNG" width="1536px" height="450px" alt="..." height="30%">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>UK</h3>
                   <p>London</p>
+                </div>
             </div>
+
+            <a class="carousel-control-prev" href="#slideShow" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#slideShow" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-          <div class="row">
-              <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                  <input type="text" class="form-control search-slt" placeholder="Source">
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                  <input type="text" class="form-control search-slt" placeholder="Destination">
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                  <select class="form-control search-slt" id="exampleFormControlSelect1">
-                      <option>Number of Passengers</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                  </select>
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                  <button type="button" class="btn btn-danger wrn-btn">Search</button>
-              </div>
+    <footer class="page-footer font-small blue-grey lighten-5 footerLinks">
+      <div style="background-color: #21d192;">
+        <div class="container">
+          <div class="row py-4 d-flex align-items-center">
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+              <h6 class="mb-0">Get connected with us on social networks!</h6>
+            </div>
+
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+              <a class="fb-ic">
+                <i class="fab fa-facebook-f white-text mr-4"> </i>
+              </a>
+
+              <a class="tw-ic">
+                <i class="fab fa-twitter white-text mr-4"> </i>
+              </a>
+
+              <a class="gplus-ic">
+                <i class="fab fa-google-plus-g white-text mr-4"> </i>
+              </a>
+
+              <a class="li-ic">
+                <i class="fab fa-linkedin-in white-text mr-4"> </i>
+              </a>
+
+              <a class="ins-ic">
+                <i class="fab fa-instagram white-text"> </i>
+              </a>
+            </div>
           </div>
-      </div>
-  </div>
-</div>
-<footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
-  <div class="container">
-    <div class="row row-30">
-      <div class="col-md-4 col-xl-5">
-        <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
-          <p>We are an award-winning travel agency, dedicated to provide the best travelling experience.</p>
-          <p class="rights"><span>©  </span><span class="copyright-year">2019</span><span> </span><span>Group Porject Inc</span><span>. </span><span>All Rights Reserved.</span></p>
         </div>
       </div>
-      <div class="col-md-4">
-        <h5>Contacts</h5>
-        <dl class="contact-list">
-          <dt>Address:</dt>
-          <dd>NU, Huntington Av, Boston, MA</dd>
-        </dl>
-        <dl class="contact-list">
-          <dt>Email:</dt>
-          <dd><a href="mailto:#">dummy@husky.com</a></dd>
-        </dl>
-        <dl class="contact-list">
-          <dt>Phone:</dt>
-          <dd><a href="tel:#">617-543-9080</a>
-          </dd>
-        </dl>
+
+      <div class="container text-center text-md-left mt-5">
+        <div class="row mt-3 dark-grey-text">
+          <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+            <h6 class="text-camelcase font-weight-bold">TravelMania</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="font-weight-bold">Company</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a class="dark-grey-text" href="#!">About</a>
+            </p>
+            <p>
+              <a class="dark-grey-text" href="#!">Blog</a>
+            </p>
+            <p>
+              <a class="dark-grey-text" href="#!">How We Work</a>
+            </p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="font-weight-bold">Useful Links</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a class="dark-grey-text" href="#!">Help/FAQ</a>
+            </p>
+            <p>
+              <a class="dark-grey-text" href="#!">Privacy Policy</a>
+            </p>
+            <p>
+              <a class="dark-grey-text" href="#!">Terms & Conditions</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="font-weight-bold">Contact</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <i class="fas fa-home mr-3"></i> Boston, MA 02120, US</p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> info@travelmania.com</p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p>
+              <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+
+        <div class="footer-copyright text-center text-black-50 py-3 copyRightInfo">© 2018 Copyright:
+          <a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/"> TravelMania.com</a>
+        </div>
       </div>
-     
+     </footer>
     </div>
-  </div>
-</footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
