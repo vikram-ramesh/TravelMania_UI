@@ -4,13 +4,15 @@ import { LandingPageComponentComponent } from './landing-page-component/landing-
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BlogComponent } from './blog/blog.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponentComponent},
   {path: 'home' , component: LandingPageComponentComponent},
   {path: 'contactUs', component: ContactUsComponent},
   {path: 'aboutUs', component: AboutUsComponent},
-  {path: 'blog', component: BlogComponent}
+  {path: 'blog', component: BlogComponent},
+  {path: 'signUp', component: SignupComponent}
 ];
 
 @NgModule({
