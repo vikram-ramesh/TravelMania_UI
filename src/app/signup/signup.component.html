@@ -1,4 +1,49 @@
 <app-header></app-header>
-<p>
-  signup works!
-</p>
+
+<div class="container">
+  <div class="row centered-form">
+  <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">sign up for TravelMania <small>It's free!</small></h3>
+       </div>
+       <div class="panel-body">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="text" formControlName="firstName" id="first_name" class="form-control input-sm" placeholder="First Name">
+              </div>
+            </div> 
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="text" formControlName="lastName" id="last_name" class="form-control input-sm" placeholder="Last Name">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="email" formControlName="email" id="email" class="form-control input-sm" placeholder="Email Address">
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="password" formControlName="password" id="password" class="form-control input-sm" placeholder="Password">
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+              </div>
+            </div>
+          </div>
+          
+          <input type="submit" value="Register" class="btn btn-info btn-block">
+        
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
