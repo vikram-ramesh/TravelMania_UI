@@ -11,6 +11,7 @@
 }
 
 .centered-form .panel .panel-heading{
+    text-align: center;
     padding: .5em;
 }
 
