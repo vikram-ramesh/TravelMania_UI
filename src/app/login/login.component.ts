@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.loginForm.valid){
+    if (this.loginForm.valid){
       alert('User form is valid!!');
     } else {
       alert('User form is not valid!!');

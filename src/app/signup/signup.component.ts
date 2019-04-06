@@ -1,17 +1,20 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { UserDataService } from '../services/user-data.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  signupForm: FormGroup;
-  success = false;
-  processingStart = false;
   message = '';
+  isNewUser = true;
+  success = false;
+  signupForm: FormGroup;
+  processingStart = false;
 
   checkPasswords(group: FormGroup) {
     let pass: string = group.controls.password.value;
@@ -19,7 +22,7 @@ export class SignupComponent implements OnInit {
     return pass === confirmPass ? null : { notSame: true };
   }
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private router: Router, private userService: UserDataService, private formBuilder: FormBuilder, private http: HttpClient) {
     this.signupForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
       lastName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
@@ -29,26 +32,44 @@ export class SignupComponent implements OnInit {
     }, {validator: this.checkPasswords});
   }
 
+  checkIsNewUser(group: FormGroup){
+    this.userService.getUser({email: group.controls.email.value})
+    .subscribe(response => {this.isNewUser = false; }, error => {
+      if(error.status === 400) {
+        this.isNewUser = true;
+      } else {
+        this.isNewUser = false;
+      }
+    });
+  }
+
   ngOnInit() {
   }
 
   onSubmit() {
     this.processingStart = true;
+
     if (this.signupForm.valid) {
-     this.http.post('http://localhost:3000/createUser', this.signupForm.value)
+      this.userService.getUser({email: this.signupForm.controls.email.value})
       .subscribe((response) => {
-        console.log('repsonse from server ', response);
-        this.success = true;
-        this.message = '';
-        this.signupForm.reset();
-        this.processingStart = false;
+        this.userService.createUser(this.signupForm.value)
+        .subscribe((done) => {
+            console.log('repsonse from server ', done);
+            this.success = true;
+            this.message = '';
+            this.signupForm.reset();
+            this.processingStart = false;
+            this.router.navigate(['/login']);
+        }, (error) => {
+          this.success = false;
+          this.message = error.error['message'];
+        });
       }, (error) => {
-        this.success = false;
-        this.message = error.error['message'];
+        this.message = 'User already exists';
       });
     } else {
       this.success = false;
-      this.message = 'Invalid Values';
+      this.message = this.isNewUser ? 'Invalid Values' : 'This Email Id is already registered';
     }
   }
 }

@@ -82,8 +82,10 @@
               <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
                 <div class="form-group">
                   <input type="password" formControlName="repassword" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
-                  <div *ngIf="processingStart && (signupForm.controls.repassword.errors || signupForm['errors']['notSame'])" class="error">
-                    <div *ngIf="signupForm.controls.repassword.errors.required"> Confirm your password</div>
+                  <div *ngIf="processingStart && signupForm.controls.repassword.errors" class="error">
+                    <div *ngIf="signupForm.controls.repassword.errors? signupForm.controls.repassword.errors.required : false"> Confirm your password</div>
+                  </div>
+                  <div *ngIf="processingStart && signupForm['errors']" class="error">
                     <div *ngIf="signupForm['errors']? signupForm['errors']['notSame'] : false">Password does not match</div>
                   </div>
                 </div>
