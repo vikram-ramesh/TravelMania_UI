@@ -52,6 +52,8 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.valid) {
       this.userService.getUser({email: this.signupForm.controls.email.value})
       .subscribe((response) => {
+        this.message = 'User already exists';
+      }, (error) => {
         this.userService.createUser(this.signupForm.value)
         .subscribe((done) => {
             console.log('repsonse from server ', done);
@@ -64,8 +66,6 @@ export class SignupComponent implements OnInit {
           this.success = false;
           this.message = error.error['message'];
         });
-      }, (error) => {
-        this.message = 'User already exists';
       });
     } else {
       this.success = false;

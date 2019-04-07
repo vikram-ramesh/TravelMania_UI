@@ -1,7 +1,21 @@
 <app-header></app-header>
 
-<div class="container">
-  
+<div class="container"> 
+  <div *ngIf="processingStart && success" class="row">
+    <div class="col-xs-12 col-sm-8 col-md-8">
+        <div class="alert alert-success" role="alert">
+            logged in successfully!
+        </div>
+    </div>
+  </div> 
+
+  <div *ngIf="processingStart && !success" class="row">
+      <div class="col-xs-12 col-sm-8 col-md-8">
+          <div class="alert alert-danger" role="alert">
+              {{message}}
+          </div>
+      </div>
+  </div> 
 
   <div class="row centered-form">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -19,8 +33,7 @@
                   <div class="form-group">
                     <input type="email" formControlName="email" id="email" class="form-control input-sm" placeholder="Email Address">
                     <div *ngIf="processingStart && loginForm.controls.email.errors" class="error">
-                      <div *ngIf="loginForm.controls.email.errors.required"> Your email Id is required</div>
-                      <div *ngIf="loginForm.controls.email.errors.pattern"> Invalid Email Id</div>
+                      <div *ngIf="loginForm.controls.email.errors.required"> Your Email Id is required</div>
                     </div>
                   </div>
               </div>
@@ -33,7 +46,6 @@
                   <input type="password" formControlName="password" id="password" class="form-control input-sm" placeholder="Password">
                   <div *ngIf="processingStart && loginForm.controls.password.errors" class="error">
                     <div *ngIf="loginForm.controls.password.errors.required"> Password is required</div>
-                    <div *ngIf="loginForm.controls.password.errors.pattern"> Password must: 8 character long, [A-Z], [0-9] and Symbols</div>
                   </div>
                 </div>
               </div>
