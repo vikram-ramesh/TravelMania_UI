@@ -6,6 +6,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { BlogComponent } from './blog/blog.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+
 
 const routes: Routes = [
   {path: '', component: LandingPageComponentComponent},
@@ -14,7 +16,8 @@ const routes: Routes = [
   {path: 'aboutUs', component: AboutUsComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'signUp', component: SignupComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'searchResults', component: SearchResultsComponent}
 ];
 
 @NgModule({
