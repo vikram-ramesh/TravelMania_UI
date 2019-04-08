@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<table class="container" border='1px'>
+	<thead>
+		<tr>
+			<th>Source</th>
+			<th>Destination</th>
+			<th>Time</th>
+			<th>Flight Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let response of flights.source">
+            <td>{{response.source}}</td>
+            <td>{{response.destination}}</td> 
+            <td>{{response.time}}</td>
+            <td>{{response.flightname}}</td>
+	</tbody>
+</table>
+
