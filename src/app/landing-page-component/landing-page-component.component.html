@@ -1,28 +1,23 @@
 <app-header></app-header>
 <div class="jumbotron">
   <h3>Search for your trip</h3>
-  <div class="row">
-    <form [formGroup]="flightSearchForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="flightSearchForm" (ngSubmit)="onSubmit()">
+     <div class="row">
       <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-        <div class="form-group">
+          <!--<input type="text" formControlName="firstName" id="first_name" class="form-control input-sm" placeholder="First Name">-->
           <input type="text" formControlName="source" id="source" class="form-control search-slt" placeholder="Source">
-        </div>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-        <div class="form-group">
           <input type="text" formControlName="destination" id="destination" class="form-control search-slt" placeholder="Destination">
-        </div>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-        <div class="form-group">
-          <input type="text" formControlName="date" id="date" class="form-control input-sm" placeholder="Date">
-        </div>
+          <input type="text" formControlName="date" id="date" class="form-control search-slt" placeholder="Date">
       </div>
       <div class="col-lg-2 col-md-3 col-sm-12 p-0">
         <button type="submit" value="Search" class="btn btn-danger wrn-btn">Search</button>
       </div>
-    </form>
-  </div>
+     </div>
+  </form>
 </div>
 
 <div id="slideShow" class="carousel slide carousel-fade" data-ride="carousel">
