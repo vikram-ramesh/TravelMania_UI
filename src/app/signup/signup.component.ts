@@ -32,23 +32,11 @@ export class SignupComponent implements OnInit {
     }, {validator: this.checkPasswords});
   }
 
-  checkIsNewUser(group: FormGroup){
-    this.userService.getUser({email: group.controls.email.value})
-    .subscribe(response => {this.isNewUser = false; }, error => {
-      if(error.status === 400) {
-        this.isNewUser = true;
-      } else {
-        this.isNewUser = false;
-      }
-    });
-  }
-
   ngOnInit() {
   }
 
   onSubmit() {
     this.processingStart = true;
-
     if (this.signupForm.valid) {
       this.userService.getUser({email: this.signupForm.controls.email.value})
       .subscribe((response) => {
