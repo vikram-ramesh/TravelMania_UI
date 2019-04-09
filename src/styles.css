@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< Updated upstream
 {
    margin-left: 0.2em;
    margin-right: 0.2em;
+=======
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.space{
+   margin-left: 5px;
+   margin-right: 5px;
+>>>>>>> Stashed changes
 }
+
+body{
+   overflow-x:hidden;
+}
+
+
