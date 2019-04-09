@@ -1,26 +1,4 @@
 <app-header></app-header>
-<<<<<<< Updated upstream
-<div class="jumbotron">
-  <h3>Search for your trip</h3>
-  <form [formGroup]="flightSearchForm" (ngSubmit)="onSubmit()">
-     <div class="row">
-      <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-          <!--<input type="text" formControlName="firstName" id="first_name" class="form-control input-sm" placeholder="First Name">-->
-          <input type="text" formControlName="source" id="source" class="form-control search-slt" placeholder="Source">
-      </div>
-      <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-          <input type="text" formControlName="destination" id="destination" class="form-control search-slt" placeholder="Destination">
-      </div>
-      <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-          <input type="text" formControlName="date" id="date" class="form-control search-slt" placeholder="Date">
-      </div>
-      <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-        <button type="submit" value="Search" class="btn btn-danger wrn-btn">Search</button>
-      </div>
-     </div>
-  </form>
-</div>
-=======
 <ngb-carousel class="space">
   <ng-template ngbSlide>
     <video class="setWidth" autoplay loop muted>
@@ -30,28 +8,14 @@
       <h3>Search for your trip</h3>
       <form class="form-inline">
         <input type="text" class="form-control col-sm-12 col-md-3" id="inlineFormInput" placeholder="Source">
->>>>>>> Stashed changes
 
         <input type="text" class="form-control col-sm-12 col-md-3" id="inlineFormInput" placeholder="Destination">
       
         <input type="text" class="form-control col-sm-12 col-md-3" id="inlineFormInputGroup" placeholder="Date">
 
-<<<<<<< Updated upstream
-      <a class="carousel-control-prev" href="#slideShow" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#slideShow" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-      </a>
-  </div>
-</div>
-=======
-        <input type="button" class="form-control col-sm-12 col-md-3 btn btn-danger" value="Submit">
+        <input type="submit" class="form-control col-sm-12 col-md-3 btn btn-danger" value="Submit">
         
       </form>
     </div>
   </ng-template>
 </ngb-carousel>
->>>>>>> Stashed changes
