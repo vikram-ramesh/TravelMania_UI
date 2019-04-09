@@ -4,9 +4,9 @@
     <video class="setWidth" autoplay loop muted>
       <source src="../../assets/flight_cartoon.mp4" type="video/mp4" />
     </video>
-    <div class="carousel-caption searchForm">
+    <div class="carousel-caption searchCarousel">
       <h3>Search for your trip</h3>
-      <form class="form-inline">
+      <form class="form-inline searchFormInline">
         <div class="form-group col-sm-12 col-md-3">
           <input type="text" class="form-control" id="inlineFormInput" placeholder="Source">
         </div>
@@ -26,8 +26,22 @@
         </div>
 
         <input type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Submit" (click)="onSubmit()">
-        
       </form>
     </div>
   </ng-template>
 </ngb-carousel>
+
+<form class="form-inline searchForm">
+    <div class="form-group">
+        <input type="text" class="form-control col-sm-12 col-md-3" id="exampleInputEmail1"placeholder="Source">
+        <input type="text" class="form-control col-sm-12 col-md-3" id="exampleInputPassword1" placeholder="Destination">
+        <div class="input-group">
+            <input class="form-control col-sm-12 col-md-3" placeholder="yyyy-mm-dd"
+            name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary fa fa-calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger col-sm-12 col-md-3">Submit</button>
+    </div>
+</form>
