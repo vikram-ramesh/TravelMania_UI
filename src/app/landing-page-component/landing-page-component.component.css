@@ -1,5 +1,9 @@
 @import "https://fonts.googleapis.com/css?family=Tangerine";
 
+.searchForm{
+    display: none;
+}
+
 .carousel-caption{
     color: black;
 }
@@ -9,7 +13,7 @@
     width: 100% !important;
 }
 
-.searchForm{
+.searchCarousel{
     top: 50%
 }
 
@@ -17,4 +21,27 @@ h3{
     font-family: 'Tangerine';
     font-size: 80px;
     font-weight: bold;
+}
+
+@media (max-width:767px){
+    h3{
+        font-size: 20px;
+    }
+    .searchCarousel{
+        top:2%;
+    }
+
+    .setWidth{
+        height: 200% !important;
+        width: 100% !important;
+    }
+
+    .searchFormInline{
+        display: none;
+    }
+
+    .searchForm{
+        display: block;
+    }
+
 }
