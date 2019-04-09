@@ -7,13 +7,25 @@
     <div class="carousel-caption searchForm">
       <h3>Search for your trip</h3>
       <form class="form-inline">
-        <input type="text" class="form-control col-sm-12 col-md-3" id="inlineFormInput" placeholder="Source">
+        <div class="form-group col-sm-12 col-md-3">
+          <input type="text" class="form-control" id="inlineFormInput" placeholder="Source">
+        </div>
 
-        <input type="text" class="form-control col-sm-12 col-md-3" id="inlineFormInput" placeholder="Destination">
+        <div class="form-group col-sm-12 col-md-3">
+          <input type="text" class="form-control" id="inlineFormInput" placeholder="Destination">
+        </div>
       
-        <input type="text" class="form-control col-sm-12 col-md-3" id="inlineFormInputGroup" placeholder="Date">
+        <div class="form-group col-sm-12 col-md-3">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                    name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary fa fa-calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
 
-        <input type="submit" class="form-control col-sm-12 col-md-3 btn btn-danger" value="Submit">
+        <input type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Submit" (click)="onSubmit()">
         
       </form>
     </div>

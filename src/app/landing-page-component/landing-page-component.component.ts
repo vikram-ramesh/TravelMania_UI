@@ -13,7 +13,8 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 export class LandingPageComponentComponent implements OnInit {
   flightSearchForm: FormGroup;
   flights: any = [];
-  constructor(private router: Router, private formBuilder: FormBuilder, private _flightsService: FlightsService, private config: NgbCarouselConfig) {
+  constructor(private router: Router, private formBuilder: FormBuilder,
+              private flightsService: FlightsService, private config: NgbCarouselConfig) {
     this.flightSearchForm = this.formBuilder.group({
       source: [''],
       destination: [''],
@@ -27,10 +28,10 @@ export class LandingPageComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-
   onSubmit() {
     console.log(this.flightSearchForm.value.source);
-    this._flightsService.getFlightBySourceAndDestination('Boston', 'LA')// this.flightSearchForm.value.source, this.flightSearchForm.value.destination
+    // this.flightSearchForm.value.source, this.flightSearchForm.value.destination
+    this.flightsService.getFlightBySourceAndDestination('Boston', 'LA')
      .subscribe(res => {
        if (res) {
         this.flights = res;
