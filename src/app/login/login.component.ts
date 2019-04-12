@@ -20,32 +20,11 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
-     
     });
   }
 
   ngOnInit() {
   }
-
-  // onSubmit(){
-  //   this.processingStart = true;
-  //   if (this.loginForm.valid) {
-  //    this.http.post('http://localhost:3000/login', this.loginForm.value)
-  //     .subscribe((response) => {
-  //       console.log('response from server ', response);
-  //       this.success = true;
-  //       this.message = '';
-  //       this.loginForm.reset();
-  //       this.processingStart = false;
-  //     }, (error) => {
-  //       this.success = false;
-  //       this.message = error.error['message'];
-  //     });
-  //   } else {
-  //     this.success = false;
-  //     this.message = 'Please enter email Id and password';
-  //   }
-  // }
 
   onSubmit(){
     this.processingStart = true;
@@ -56,9 +35,11 @@ export class LoginComponent implements OnInit {
     this.userService.getUser(userCredentials)
     .subscribe((response) => {
       this.success = true;
-      this.message ='';
-      this.router.navigate(['/'])
-    }, (err)=>{
+      this.message = '';
+      this.router.navigate(['/home']);
+
+      sessionStorage.setItem('User', JSON.stringify(response));
+    }, (err) => {
       this.success = false;
       if(err.status === 401){
         this.message = 'Invalid Email Id \ Password';
