@@ -24,3 +24,11 @@
     color: red;
     font-size: 13px;
 }
+@import "https://fonts.googleapis.com/css?family=Tangerine";
+
+form h3{
+    font-family: 'Tangerine';
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
