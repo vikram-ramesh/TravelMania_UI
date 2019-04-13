@@ -27,7 +27,6 @@ export class LandingPageComponentComponent implements OnInit {
 
   ngOnInit() {
   }
-
   onSubmit() {
     console.log(this.flightSearchForm.value.source);
     // this.flightSearchForm.value.source, this.flightSearchForm.value.destination

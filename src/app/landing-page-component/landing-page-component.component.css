@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Tangerine";
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 .searchForm{
     display: none;
