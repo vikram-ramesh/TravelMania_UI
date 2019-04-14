@@ -1,20 +1,15 @@
 <app-header></app-header>
 
-<table class="container" border='1px'>
-	<thead>
-		<tr>
-			<th>Source</th>
-			<th>Destination</th>
-			<th>Time</th>
-			<th>Flight Name</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let response of flights.source">
-            <td>{{response.source}}</td>
-            <td>{{response.destination}}</td> 
-            <td>{{response.time}}</td>
-            <td>{{response.flightname}}</td>
-	</tbody>
-</table>
+<div class="container">
+	<div class="card">
+		<div class="card-header"><b>{{message.source}} -> {{message.destination}}</b>
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">{{message.stopName}}</h5>
+			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+	</div>
+</div>
+
 

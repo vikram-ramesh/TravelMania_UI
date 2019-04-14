@@ -11,16 +11,15 @@ import { Subscription } from 'rxjs';
 })
 export class SearchResultsComponent implements OnInit {
 
-   message: any;
-    subscription: Subscription;
-  flights:any = [];  
-  constructor(private _flightsService: FlightsService,private messageService: MessageService) { 
-    this.subscription = this.messageService.getMessage().subscribe(message => { this.message = message; });
+  message: any;
+  subscription: Subscription;
+  flights: any = [];
+  constructor(private messageService: MessageService) {
+    this.message = this.messageService.getMessage();
   }
 
   ngOnInit() {
-     console.log(this.message);
-      this.flights = localStorage.getItem("flight");
+    console.log(this.message);
   }
 
 }

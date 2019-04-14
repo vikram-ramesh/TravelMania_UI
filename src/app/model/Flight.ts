@@ -2,5 +2,11 @@ export class Flight {
   source: string;
   destination: string;
   date: string;
-  flightname: string;
+  stops: 1;
+  stopName: 'Heathrow Airport (LHR)';
+  departureTime: '7.30 AM';
+  arrivalTimeAtStop: '7.05 PM';
+  departureTimeFromStop: '1.25 PM';
+  arrivalTime: '3.10 PM';
+  layoverTime: '4h 20m';
 }

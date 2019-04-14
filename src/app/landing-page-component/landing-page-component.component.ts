@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FlightsService } from '../services/flights.service';
 import { Router } from '@angular/router';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FlightsService } from '../services/flights.service';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { MessageService } from '../services/share-flight-details.service';
+import { Flight } from '../model/Flight';
 
 @Component({
   selector: 'app-landing-page-component',
@@ -12,9 +14,10 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class LandingPageComponentComponent implements OnInit {
   flightSearchForm: FormGroup;
-  flights: any = [];
-  constructor(private router: Router, private formBuilder: FormBuilder,
-              private flightsService: FlightsService, private config: NgbCarouselConfig) {
+  flight = new Flight();
+
+  constructor(private router: Router, private formBuilder: FormBuilder, private config: NgbCarouselConfig,
+              private msgService: MessageService) {
     this.flightSearchForm = this.formBuilder.group({
       source: [''],
       destination: [''],
@@ -27,17 +30,23 @@ export class LandingPageComponentComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  buildFlightObject() {
+    this.flight.source = this.flightSearchForm.value.source;
+    this.flight.destination = this.flightSearchForm.value.destination;
+    this.flight.date = this.flightSearchForm.value.date;
+    this.flight.stops = 1;
+    this.flight.stopName = 'Heathrow Airport (LHR)';
+    this.flight.departureTime = '7.30 AM';
+    this.flight.arrivalTimeAtStop = '7.05 PM';
+    this.flight.departureTimeFromStop = '1.25 PM';
+    this.flight.arrivalTime = '3.10 PM';
+    this.flight.layoverTime = '4h 20m';
+  }
+
   onSubmit() {
-    console.log(this.flightSearchForm.value.source);
-    // this.flightSearchForm.value.source, this.flightSearchForm.value.destination
-    this.flightsService.getFlightBySourceAndDestination('Boston', 'LA')
-     .subscribe(res => {
-       if (res) {
-        this.flights = res;
-        localStorage.setItem('flight', this.flights);
-        this.router.navigate(['/searchResults']);
-        console.log(this.flights[0].source);
-       }
-    });
+    this.buildFlightObject();
+    this.router.navigate(['/searchResults']);
+    this.msgService.sendMessage(this.flight);
   }
 }
