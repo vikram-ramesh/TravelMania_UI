@@ -1,14 +1,12 @@
 <app-header></app-header>
-
 <div class="container">
   <div *ngIf="success" class="row">
     <div class="col-xs-12 col-sm-8 col-md-8">
         <div class="alert alert-success" role="alert">
-            Registration Successful!
+            You are successfully registerd!
         </div>
     </div>
   </div>  
-
   <div *ngIf="processingStart && !success" class="row">
       <div class="col-xs-12 col-sm-8 col-md-8">
           <div class="alert alert-danger" role="alert">
@@ -16,7 +14,6 @@
           </div>
       </div>
   </div> 
-
   <div class="row centered-form middle">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
       <div class="panel panel-default">
@@ -31,52 +28,48 @@
                 <div class="form-group">
                   <input type="text" formControlName="firstName" id="first_name" class="form-control input-sm" placeholder="First Name">
                   <div *ngIf="processingStart && signupForm.controls.firstName.errors" class="error">
-                    <div *ngIf="signupForm.controls.firstName.errors.required">First Name is mandatory</div>
+                    <div *ngIf="signupForm.controls.firstName.errors.required">Firstname is mandatory</div>
                     <div *ngIf="signupForm.controls.firstName.errors.pattern"> First Name must contain only alphabets</div>
                   </div>
                 </div>
               </div> 
             </div>
-
             <div class="row">
               <span class="fa fa-user col-sm-2 col-form-label"></span>
               <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
                 <div class="form-group">
                   <input type="text" formControlName="lastName" id="last_name" class="form-control input-sm" placeholder="Last Name">
                   <div *ngIf="processingStart && signupForm.controls.lastName.errors" class="error">
-                    <div *ngIf="signupForm.controls.lastName.errors.required">Last Name is mandatory</div>
+                    <div *ngIf="signupForm.controls.lastName.errors.required">Lastname is mandatory</div>
                     <div *ngIf="signupForm.controls.lastName.errors.pattern"> Last Name must contain only alphabets</div>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="row">
                 <span class="fa fa-envelope col-sm-2 col-form-label"></span>
                 <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
                   <div class="form-group">
                     <input type="email" formControlName="email" id="email" class="form-control input-sm" placeholder="Email Address">
                     <div *ngIf="processingStart && signupForm.controls.email.errors" class="error">
-                      <div *ngIf="signupForm.controls.email.errors.required">Email ID is mandatory</div>
-                      <div *ngIf="signupForm.controls.email.errors.pattern"> Invalid Email ID</div>
+                      <div *ngIf="signupForm.controls.email.errors.required"> Email is mandatory</div>
+                      <div *ngIf="signupForm.controls.email.errors.pattern"> Invalid Email Id</div>
                     </div>
                   </div>
               </div>
             </div>
-
             <div class="row">
                 <span class="fa fa-key col-sm-2 col-form-label"></span>
               <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
                 <div class="form-group">
                   <input type="password" formControlName="password" id="password" class="form-control input-sm" placeholder="Password">
                   <div *ngIf="processingStart && signupForm.controls.password.errors" class="error">
-                    <div *ngIf="signupForm.controls.password.errors.required">Password</div> is mandatory</div>
+                    <div *ngIf="signupForm.controls.password.errors.required"> Password is mandatory</div>
                     <div *ngIf="signupForm.controls.password.errors.pattern"> Password must: 8 character long, [A-Z], [0-9] and Symbols</div>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="row">
                 <span class="fa fa-key col-sm-2 col-form-label"></span>
               <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
@@ -90,8 +83,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <input type="submit" value="Register" class="btn btn-info btn-block">        
+            </div>         
+            <input type="submit" value="Register" class="btn btn-info btn-block">
           </form>
         </div>
       </div>
