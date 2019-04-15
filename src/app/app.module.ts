@@ -16,6 +16,8 @@ import { BlogComponent } from './blog/blog.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { DropDownDirective } from './directive/drop-down.directive';
+import { SearchFilterPipe } from './pipe/search-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     BlogComponent,
     SignupComponent,
     LoginComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    DropDownDirective,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
