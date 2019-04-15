@@ -14,7 +14,14 @@
       <h3>Search for your trip</h3>
       <form [formGroup]="flightSearchForm" class="form-inline searchFormInline">
         <div class="form-group col-sm-12 col-md-3">
-          <input type="text" class="form-control" id="inlineFormInput" formControlName="source" placeholder="Source">
+          <input type="text" id="inlineFormInput" (click)="toggleDropDown()" formControlName="source" placeholder="Source" class="form-control">
+          <div *ngIf = "showDropDown" class = "state-dropdown">
+            <div>
+                <div (click) = "selectValue(s)" class = state *ngFor="let s of states|searchFilter:getSearchValue() " >
+                  {{s}}
+                </div>
+            </div>
+          </div>
         </div>
 
         <div class="form-group col-sm-12 col-md-3">

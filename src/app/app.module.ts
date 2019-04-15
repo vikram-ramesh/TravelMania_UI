@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { EventsComponent } from './events/events.component';
+import { SearchFilterPipe } from './pipe/search-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { EventsComponent } from './events/events.component';
     SignupComponent,
     LoginComponent,
     SearchResultsComponent,
-    EventsComponent
+    EventsComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
