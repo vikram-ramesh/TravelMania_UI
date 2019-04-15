@@ -2,12 +2,41 @@
 
 <div class="container">
 	<div class="card">
-		<div class="card-header"><b>{{message.source}} -> {{message.destination}}</b>
+		<div class="card-header"><b>{{message.source}} -> {{message.destination}}  <span class="rightFloat">Date: {{message.date.year}}/{{message.date.month}}/{{message.date.day}}</span></b>
 		</div>
 		<div class="card-body">
-			<h5 class="card-title">{{message.stopName}}</h5>
-			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
+			<span class="card-link"> {{message.departureTime}} - {{message.arrivalTime}} </span>
+			<span class="card-link">{{message.totalTime}} </span>
+			<span class="card-link"> {{message.stops}} Stop ({{message.layoverTime}} LHR)</span>
+			<span class="card-link"> {{message.price}} </span>
+			<button type="button" class="btn btn-info card-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Details</button>
+			<button type="button" class="btn btn-info card-link">Book</button>
+			<div id="collapseExample" [ngbCollapse]="isCollapsed">
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTime}} . {{message.source}} </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTimeAtStop}} . {{message.stopName}} </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+						{{message.layoverTime}} layover - (LHR) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTimeFromStop}} . {{message.stopName}} </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTime}} . {{message.destination}} </div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

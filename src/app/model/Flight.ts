@@ -9,4 +9,6 @@ export class Flight {
   departureTimeFromStop: '1.25 PM';
   arrivalTime: '3.10 PM';
   layoverTime: '4h 20m';
+  price: '$1,209';
+  totalTime: '21h 10min';
 }
