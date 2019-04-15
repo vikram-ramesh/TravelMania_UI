@@ -42,11 +42,14 @@ export class LandingPageComponentComponent implements OnInit {
     this.flight.departureTimeFromStop = '1.25 PM';
     this.flight.arrivalTime = '3.10 PM';
     this.flight.layoverTime = '4h 20m';
+    this.flight.price = '$1,209';
+    this.flight.totalTime = '21h 10min';
   }
 
   onSubmit() {
     this.buildFlightObject();
     this.router.navigate(['/searchResults']);
     this.msgService.sendMessage(this.flight);
+    localStorage.setItem('flight', JSON.stringify(this.flight));
   }
 }

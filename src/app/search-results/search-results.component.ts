@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FlightsService } from '../services/flights.service';
-import { Flight } from '../model/Flight';
 import { MessageService  } from '../services/share-flight-details.service';
 import { Subscription } from 'rxjs';
 
@@ -10,12 +8,12 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-
+  public isCollapsed = true;
   message: any;
   subscription: Subscription;
   flights: any = [];
   constructor(private messageService: MessageService) {
-    this.message = this.messageService.getMessage();
+    this.message = this.messageService.getMessage() ? this.messageService.getMessage() : JSON.parse(localStorage.getItem('flight'));
   }
 
   ngOnInit() {
