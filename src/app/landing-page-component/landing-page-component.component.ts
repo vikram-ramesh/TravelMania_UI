@@ -10,11 +10,14 @@ import { Flight } from '../model/Flight';
   selector: 'app-landing-page-component',
   templateUrl: './landing-page-component.component.html',
   styleUrls: ['./landing-page-component.component.css'],
+  
   providers: [NgbCarouselConfig]
 })
 export class LandingPageComponentComponent implements OnInit {
   flightSearchForm: FormGroup;
   flight = new Flight();
+  showDropDown = false;
+  states = ["Boston","London","Mumbai","Moscow", "Tokyo","Istanbul","Bangkok","Paris","Dubai","New York", "Kuala Lumpur","Seoul","Antalya","Phuket","Hong Kong","Mecca", "Barcelona","Pattaya", "Osaka","Bali","Atlanta","Los Angeles", "Chicago","Dallas","Denver","San Francisco","Las Vegas","Seattle", "Charlotte","Orlando","	Phoenix","Miami","Houston","Detroit", "Philadelphia","Salt Lake City"];
 
   constructor(private router: Router, private formBuilder: FormBuilder, private config: NgbCarouselConfig,
               private msgService: MessageService) {
@@ -29,6 +32,19 @@ export class LandingPageComponentComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  toggleDropDown(){
+    this.showDropDown = !this.showDropDown;
+  }
+
+  selectValue(value){
+    this.flightSearchForm.patchValue({"source":value});
+    this.showDropDown = false;
+  }
+
+  getSearchValue(){
+    return this.flightSearchForm.value.source;
   }
 
   buildFlightObject() {
