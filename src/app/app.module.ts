@@ -36,7 +36,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
   ],
   exports: [
     HeaderComponent,

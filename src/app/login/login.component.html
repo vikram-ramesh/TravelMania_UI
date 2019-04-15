@@ -4,7 +4,7 @@
   <div *ngIf="processingStart && success" class="row">
     <div class="col-xs-12 col-sm-8 col-md-8">
         <div class="alert alert-success" role="alert">
-            logged in successfully!
+            Login Successful!
         </div>
     </div>
   </div> 
@@ -25,8 +25,6 @@
         </div>
         <div class="panel-body">
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            
-
             <div class="row">
                 <span class="fa fa-envelope col-sm-2 col-form-label"></span>
                 <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
@@ -50,15 +48,12 @@
                 </div>
               </div>
             </div>
-
-    
-          
             <input type="submit" value="Login" class="btn btn-info btn-block">
             <span class="psw"><a href="#">Forgot password?</a></span>
-        
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br>
