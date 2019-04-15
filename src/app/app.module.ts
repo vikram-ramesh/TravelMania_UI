@@ -4,7 +4,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponentComponent } from './landing-page-component/landing-page-component.component';
@@ -16,6 +15,7 @@ import { BlogComponent } from './blog/blog.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { EventsComponent } from './events/events.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     BlogComponent,
     SignupComponent,
     LoginComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
