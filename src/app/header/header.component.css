@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/css?family=Tangerine";
 .centered-form{
     margin: 0 auto;
     float: none;
@@ -24,7 +25,6 @@
     color: red;
     font-size: 13px;
 }
-@import "https://fonts.googleapis.com/css?family=Tangerine";
 
 form h3{
     font-family: 'Tangerine';
