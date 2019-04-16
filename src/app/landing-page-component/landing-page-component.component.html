@@ -29,7 +29,7 @@
         <div class="form-group col-sm-12 col-md-3">
           <div class="input-group">
             <input class="form-control" placeholder="yyyy-mm-dd" formControlName="date"
-                    name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" readonly>
+                    name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="date" readonly>
             <div class="input-group-append">
               <button class="btn btn-danger" (click)="d.toggle()" type="button"><span class="fa fa-calendar"></span></button>
             </div>
