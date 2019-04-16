@@ -4,8 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from '../services/share-flight-details.service';
 import { Flight } from '../model/Flight';
-import { $ } from 'protractor';
-import { Input } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-landing-page-component',
@@ -23,8 +21,8 @@ export class LandingPageComponentComponent implements OnInit {
   flag3: any;
   flightSearchForm: FormGroup;
   flight = new Flight();
-  sourceText = "";
-  destinationText = "";
+  sourceText = '';
+  destinationText = '';
   showDropDown = false;
   states = ['Boston', "Mumbai", "San Francisco", "Seattle", "Cancun", "Toronto" ];
   showDropDownDest = false;

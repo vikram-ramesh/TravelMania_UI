@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-results',
@@ -19,8 +20,17 @@ export class SearchResultsComponent implements OnInit {
   subscription: Subscription;
   flights: any = [];
   userSignedIn = false;
-  constructor(private messageService: MessageService, private router: Router, private modalService: NgbModal) {
+  flightSearchForm: FormGroup;
+
+  constructor(private messageService: MessageService, private router: Router,
+              private modalService: NgbModal, private formBuilder: FormBuilder) {
     this.message = this.messageService.getMessage() ? this.messageService.getMessage() : JSON.parse(localStorage.getItem('flight'));
+
+    this.flightSearchForm = this.formBuilder.group({
+      source: ['', Validators.required],
+      destination: ['', Validators.required],
+      date: ['', Validators.required]
+    });
   }
 
   ngOnInit() {
