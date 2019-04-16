@@ -83,5 +83,8 @@ h3{
     .searchForm{
         display: block;
     }
+}
 
+#inlineFormInput{
+    position: relative;
 }

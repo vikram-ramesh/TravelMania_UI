@@ -23,8 +23,11 @@ export class LandingPageComponentComponent implements OnInit {
   flag3: any;
   flightSearchForm: FormGroup;
   flight = new Flight();
+  sourceText = "";
+  destinationText = "";
   showDropDown = false;
   states = ['Boston', "Mumbai", "San Francisco", "Seattle", "Cancun", "Toronto" ];
+  showDropDownDest = false;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private config: NgbCarouselConfig,
               private msgService: MessageService) {
@@ -45,13 +48,38 @@ export class LandingPageComponentComponent implements OnInit {
     this.showDropDown = !this.showDropDown;
   }
 
-  selectValue(value) {
-    this.flightSearchForm.patchValue({source: value});
+  keyPress(event: any)
+  {
+    this.showDropDown = !this.showDropDown;
+    if(event.keyCode === 8 && this.sourceText == '') {
+          this.showDropDown = false;
+    }
+  }
+  keyPressDest(event: any)
+  {
+    this.showDropDownDest = !this.showDropDownDest;
+    if(event.keyCode === 8 && this.destinationText == '') {
+          this.showDropDownDest = false;
+    }
+  }
+  
+  selectSourceValue(value){
+    this.flightSearchForm.controls['source'].setValue(value);
+    this.sourceText = this.flightSearchForm.controls['source'].value;
     this.showDropDown = false;
   }
 
-  getSearchValue() {
-    return this.flightSearchForm.value.source;
+  selectDestValue(value){
+    this.flightSearchForm.controls['destination'].setValue(value);
+    this.destinationText = this.flightSearchForm.controls['destination'].value;
+    this.showDropDownDest = false;
+  }
+
+  getSearchValueSource(){
+    return this.sourceText;
+  }
+  getSearchValueDest(){
+    return this.destinationText;
   }
 
   buildFlightObject() {
