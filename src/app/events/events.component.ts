@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
+  isLoggedIn = false;
   isRegistered = false;
   shortFilmRegistered: boolean;
   magicRegistered: boolean;
@@ -19,7 +20,12 @@ export class EventsComponent implements OnInit {
   constructor(private modalService: NgbModal, private router: Router) { }
 
   ngOnInit() {
-    if (sessionStorage.getItem('event')) {this.flagSettings(sessionStorage.getItem('event')); }
+    if (sessionStorage.getItem('User')) {
+      if (sessionStorage.getItem('event')) {this.flagSettings(sessionStorage.getItem('event')); }
+      this.isLoggedIn = true;
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
   flagSettings(eventName) {
@@ -46,7 +52,7 @@ export class EventsComponent implements OnInit {
     } else {
       this.modalService.open(testModal, {centered: true}).result.then((result) => {
         if (result === 'yes') {
-          this.router.navigate(['/login']);
+          //navigate user towards ticket booking
         } else {
           console.log('no');
         }
@@ -68,5 +74,5 @@ export class EventsComponent implements OnInit {
       sessionStorage.removeItem('event');
       this.modalService.open(eventDeregiModal, {centered: true});
       this.flagSettings(eventName);
-    }
+  }
 }

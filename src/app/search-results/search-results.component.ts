@@ -35,12 +35,12 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.message);
-    if (sessionStorage.length > 0) {
+    if (sessionStorage.getItem('User')) {
       this.userSignedIn = true;
     }
   }
 
-  checkLogin(testModal) {
+  checkLogin(testModal: any) {
     if (this.userSignedIn) {
       this.router.navigate(['/events']);
     } else {
