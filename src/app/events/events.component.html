@@ -100,7 +100,12 @@
     <ng-template #eventModal let-c="close" let-d="dismiss">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">You have successfully registered for event!</h4>
+            <h4 class="modal-title">You will be registered for this event!</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
           </div>
         </div>
     </ng-template>
@@ -110,13 +115,21 @@
           <div class="modal-header">
             <h4 class="modal-title">You have already registered for other event!</h4>
           </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Okay!</button>
+          </div>
         </div>
     </ng-template>
 
     <ng-template #eventDeregiModal let-c="close" let-d="dismiss">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">You are no longer registered to this event!</h4>
+            <h4 class="modal-title">You will no longer be registered for this event!</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
           </div>
         </div>
     </ng-template>

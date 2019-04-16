@@ -62,17 +62,29 @@ export class EventsComponent implements OnInit {
 
   registerEvent(eventModal: any, eventModalError: any, eventName: string) {
     if (sessionStorage.getItem('event')) {
-      this.modalService.open(eventModalError, {centered: true});
+      this.modalService.open(eventModalError, {centered: true}).result.then((result) => {
+        if (result === 'yes') {}
+      });
     } else {
-      sessionStorage.setItem('event', eventName);
-      this.modalService.open(eventModal, {centered: true});
-      this.flagSettings(eventName);
+      this.modalService.open(eventModal, {centered: true}).result.then((result) => {
+        if (result === 'yes') {
+          sessionStorage.setItem('event', eventName);
+          this.flagSettings(eventName);
+        } else {
+          console.log('no');
+        }
+      });
     }
   }
 
   deregisterEvent(eventDeregiModal: any, eventName: string) {
-      sessionStorage.removeItem('event');
-      this.modalService.open(eventDeregiModal, {centered: true});
-      this.flagSettings(eventName);
+    this.modalService.open(eventDeregiModal, {centered: true}).result.then((result) => {
+      if (result === 'yes') {
+        sessionStorage.removeItem('event');
+        this.flagSettings(eventName);
+      } else {
+        console.log('no');
+      }
+    });
   }
 }
