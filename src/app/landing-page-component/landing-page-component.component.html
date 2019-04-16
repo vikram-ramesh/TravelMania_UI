@@ -7,9 +7,16 @@
 
 <ngb-carousel class="space">
   <ng-template ngbSlide>
-    <video class="setWidth" autoplay loop muted>
+       <!--   <video width="320" height="240" class = controls autoplay loop muted>
+              <source src="../../assets/flight_cartoon.mp4" type="video/mp4">
+          </video>
+        -->
+      <div class="embed-responsive embed-responsive-16by9"> 
+         <video class="setWidth" autoplay loop muted width="320" height="240" >
       <source src="../../assets/flight_cartoon.mp4" type="video/mp4" />
     </video>
+  </div>
+  
     <div class="carousel-caption searchCarousel">
       <h3>Search for your trip</h3>
       <form [formGroup]="flightSearchForm" class="form-inline searchFormInline">
@@ -38,34 +45,41 @@
 </ngb-carousel>
 
 <br><br>
-  <section id="mu-video">
+ <section id="mu-video">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="mu-video-area">
-            <h2>Watch Our Recent Trip Video</h2>
-            <div class="mu-video-content">		
-              <iframe width="1100" height="600" src="https://www.youtube.com/embed/58K5QL0x6Zo" allowfullscreen></iframe>							
+            <h2 class = "text-center"> Watch Our Recent Trip Video</h2>
+            <div class="embed-responsive embed-responsive-4by3">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" 
+            frameborder="0" allowfullscreen></iframe>
             </div>
-          </div>
+          <!-- <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+</div> 
+-->
+    </div>
         </div>
       </div>
     </div>	
-  </section>
+</section> 
+
+
   <br><br>
   <section id="mu-featured-tours">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="mu-featured-tours-area">
-            <h3>Most recommended events</h3><br><br>
+            <h3 class = "text-center">Most recommended events</h3><br><br>
             <div class="mu-featured-tours-content">
               <div class="row">
                 <div class="col-md-4">
                   <div class="mu-featured-tours-single">
                     <img src="assets/puppet.jpg" alt="img" width="370" height="300">
                     <div class="mu-featured-tours-single-info">
-                      <h3>Puppet Show</h3>
+                      <h3 class = "text-center">Puppet Show</h3>
                     </div>
                   </div>
                 </div>
@@ -73,7 +87,7 @@
                   <div class="mu-featured-tours-single">
                     <img src="assets/magic.jpg" width="370" height="300" alt="img">
                     <div class="mu-featured-tours-single-info">
-                      <h3>Magic Show</h3>
+                      <h3 class = "text-center">Magic Show</h3>
                     </div>
                   </div>
                 </div>
@@ -81,7 +95,7 @@
                   <div class="mu-featured-tours-single">
                     <img src="assets/movie.jpg" width="370" height="300" alt="img">
                     <div class="mu-featured-tours-single-info">
-                      <h3>Short Film Fest</h3>
+                      <h3 class = "text-center">Short Film Fest</h3>
                     </div>
                   </div>
                 </div>
@@ -89,7 +103,7 @@
                   <div class="mu-featured-tours-single">
                     <img src="assets/pottery.jpg" alt="img" width="370" height="300">
                     <div class="mu-featured-tours-single-info">
-                      <h3>Pottery Sessions</h3>
+                      <h3 class = "text-center">Pottery Sessions</h3>
                     </div>
                   </div>
                 </div>
@@ -97,7 +111,7 @@
                   <div class="mu-featured-tours-single">
                     <img src="assets/game.jpg" width="370" height="300" alt="img">
                     <div class="mu-featured-tours-single-info">
-                      <h3>Gaming Zone</h3>
+                      <h3 class = "text-center">Gaming Zone</h3>
                     </div>
                   </div>
                 </div>
@@ -105,7 +119,7 @@
                   <div class="mu-featured-tours-single">
                     <img src="assets/fooseball.jpg" width="370" height="300" alt="img">
                     <div class="mu-featured-tours-single-info">
-                      <h3>Fooseball Zone</h3>
+                      <h3 class = "text-center">Fooseball Zone</h3>
                     </div>
                   </div>
                 </div>
