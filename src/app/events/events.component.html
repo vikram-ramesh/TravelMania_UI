@@ -1,8 +1,15 @@
 <app-header></app-header>
 
-<h3 class="title">!!! Here are some exciting events for you !!! </h3><br>
-<h5 class="title">Now spend your layover time with us! Register for any event and enjoy your journey without break. </h5><br>
 <div class="container">
+   <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="alert alert-warning title" role="alert">
+              Spend your layover time with us! Register for any event and enjoy your journey without break.<br><br>
+              <button type="button" class="btn btn-info" (click)="warnUser(testModal)">Book this flight</button>
+          </div>
+      </div>
+   </div>
+    
     <div class="row">
         <div class="col-sm-4 col-md-4">
             <div class="card" style="width: 18rem;">
@@ -10,7 +17,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Short Film Fest</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Register</a>
+                  <button type="button" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'shortFilm')">Register</button>
                 </div>
             </div>
         </div>
@@ -20,7 +27,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Magic Show</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Register</a>
+                  <a href="#" class="btn btn-info">Register</a>
                 </div>
             </div>
         </div>
@@ -31,7 +38,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Puppet Show</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Register</a>
+                  <a href="#" class="btn btn-info">Register</a>
                 </div>
             </div>
         </div>
@@ -44,7 +51,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Game Zone</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Register</a>
+                  <a href="#" class="btn btn-info">Register</a>
                 </div>
             </div>
         </div>
@@ -54,7 +61,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Poppery Tutorials</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Register</a>
+                  <a href="#" class="btn btn-info">Register</a>
                 </div>
             </div>
         </div>
@@ -65,10 +72,39 @@
                 <div class="card-body">
                   <h5 class="card-title">Karaoke Station</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Register</a>
+                  <a href="#" class="btn btn-info">Register</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <ng-template #testModal let-c="close" let-d="dismiss">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">You haven't registerd for any event!</h4>
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" (click)="c('yes')">No, Not interested!</button>
+          <button type="button" class="btn btn-info" (click)="c('no')">Let me check again</button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #eventModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You have successfully registered for event!</h4>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventModalError let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You have already registered for other event!</h4>
+          </div>
+        </div>
+    </ng-template>
   </div>
 <app-footer></app-footer>
