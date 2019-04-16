@@ -20,13 +20,13 @@
         </li> -->
       </ul>
       <form *ngIf="!userSignedIn" class="form-inline my-2 my-lg-0">
-         <button class="btn btn-outline-info my-2 my-sm-0" type="submit" routerLink="/login">Login</button>&nbsp;
-         <button class="btn btn-outline-info my-2 my-sm-0" type="submit" routerLink="/signUp">SignUp</button>
+         <button class="btn btn-info" type="submit" routerLink="/login">Login</button>&nbsp;
+         <button class="btn btn-info" type="submit" routerLink="/signUp">SignUp</button>
       </form>
 
       <form *ngIf="userSignedIn" class="form-inline my-2 my-lg-0">
         <h3>Welcome {{user}}!</h3> &nbsp;&nbsp;&nbsp;
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="logOut()">Logout</button>
+        <button class="btn btn-info" type="submit" (click)="logOut()">Logout</button>
      </form>
     </div>
   </nav>
