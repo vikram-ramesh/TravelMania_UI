@@ -16,13 +16,18 @@ import { Input } from '@angular/compiler/src/core';
 })
 export class LandingPageComponentComponent implements OnInit {
   source: any;
+  destination: any;
+  date: any;
+  flag1: any;
+  flag2: any;
+  flag3: any;
   flightSearchForm: FormGroup;
   flight = new Flight();
   sourceText = "";
   destinationText = "";
   showDropDown = false;
+  states = ['Boston', "Mumbai", "San Francisco", "Seattle", "Cancun", "Toronto" ];
   showDropDownDest = false;
-  states = ['Boston', "London", "Mumbai", "Moscow", 'Tokyo','Istanbul', "Bangkok", "Paris",'Dubai','New York', 'Kuala Lumpur','Seoul','Antalya', "Phuket", "Hong Kong",'Mecca', 'Barcelona', "Pattaya", 'Osaka','Bali', "Atlanta",'Los Angeles', 'Chicago', "Dallas", "Denver",'San Francisco', "Las Vegas",'Seattle', 'Charlotte', "Orlando", "	Phoenix",'Miami','Houston','Detroit', 'Philadelphia','Salt Lake City'];
 
   constructor(private router: Router, private formBuilder: FormBuilder, private config: NgbCarouselConfig,
               private msgService: MessageService) {
@@ -93,10 +98,38 @@ export class LandingPageComponentComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.flightSearchForm.invalid) {
+    if (this.flightSearchForm.value.source=="") {
+      this.flag1=false;
       this.source = document.getElementById('source');
       this.source.setAttribute('style', 'border:red solid 2px;');
-    } else {
+    } 
+    if (this.flightSearchForm.value.source!="") {
+      this.flag1=true;
+      this.source = document.getElementById('source');
+      this.source.setAttribute('style', 'border:white solid 0px;');
+    } 
+    if(this.flightSearchForm.value.destination==""){
+      this.flag2=false;
+      this.destination = document.getElementById('destination');
+      this.destination.setAttribute('style', 'border:red solid 2px;');
+    }
+    if (this.flightSearchForm.value.destination!="") {
+      this.flag2=true;
+      this.destination = document.getElementById('destination');
+      this.destination.setAttribute('style', 'border:white solid 0px;');
+    }
+    if(this.flightSearchForm.value.date== undefined){
+      this.flag3=false;
+      this.date = document.getElementById('date');
+      this.date.setAttribute('style', 'border:red solid 2px;');
+    }
+    else{
+      this.flag3=true;
+      this.date = document.getElementById('date');
+      this.date.setAttribute('style', 'border:white solid 0px;');
+      
+    }
+    if(this.flag1 && this.flag2 && this.flag3) {
       this.buildFlightObject();
       this.router.navigate(['/searchResults']);
       this.msgService.sendMessage(this.flight);
