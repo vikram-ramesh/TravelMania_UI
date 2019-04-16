@@ -62,3 +62,26 @@ h3{
 .state:hover{
     background: tomato;
 }
+
+@media (max-width:767px){
+    h3{
+        font-size: 20px;
+    }
+    .searchCarousel{
+        top:2%;
+    }
+
+    .setWidth{
+        height: 200% !important;
+        width: 100% !important;
+    }
+
+    .searchFormInline{
+        display: none;
+    }
+
+    .searchForm{
+        display: block;
+    }
+
+}
