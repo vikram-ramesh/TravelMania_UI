@@ -8,7 +8,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-  public isCollapsed = true;
+  public isLHRCollapsed = true;
+  public isDXBCollapsed = true;
+  public isAUHCollapsed = true;
+  public isAMSCollapsed = true;
+  public isDOHCollapsed = true;
   message: any;
   subscription: Subscription;
   flights: any = [];

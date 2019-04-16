@@ -1,27 +1,32 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { FlightsService } from '../services/flights.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from '../services/share-flight-details.service';
 import { Flight } from '../model/Flight';
+import { $ } from 'protractor';
+import { Input } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-landing-page-component',
   templateUrl: './landing-page-component.component.html',
   styleUrls: ['./landing-page-component.component.css'],
+
   providers: [NgbCarouselConfig]
 })
 export class LandingPageComponentComponent implements OnInit {
+  source: any;
   flightSearchForm: FormGroup;
   flight = new Flight();
+  showDropDown = false;
+  states = ['Boston', "London", "Mumbai", "Moscow", 'Tokyo','Istanbul', "Bangkok", "Paris",'Dubai','New York', 'Kuala Lumpur','Seoul','Antalya', "Phuket", "Hong Kong",'Mecca', 'Barcelona', "Pattaya", 'Osaka','Bali', "Atlanta",'Los Angeles', 'Chicago', "Dallas", "Denver",'San Francisco', "Las Vegas",'Seattle', 'Charlotte', "Orlando", "	Phoenix",'Miami','Houston','Detroit', 'Philadelphia','Salt Lake City'];
 
   constructor(private router: Router, private formBuilder: FormBuilder, private config: NgbCarouselConfig,
               private msgService: MessageService) {
     this.flightSearchForm = this.formBuilder.group({
-      source: [''],
-      destination: [''],
-      date: ['']
+      source: ['', Validators.required],
+      destination: ['', Validators.required],
+      date: ['', Validators.required]
     });
 
     this.config.showNavigationArrows = false;
@@ -29,6 +34,19 @@ export class LandingPageComponentComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  toggleDropDown() {
+    this.showDropDown = !this.showDropDown;
+  }
+
+  selectValue(value) {
+    this.flightSearchForm.patchValue({source: value});
+    this.showDropDown = false;
+  }
+
+  getSearchValue() {
+    return this.flightSearchForm.value.source;
   }
 
   buildFlightObject() {
@@ -47,9 +65,14 @@ export class LandingPageComponentComponent implements OnInit {
   }
 
   onSubmit() {
-    this.buildFlightObject();
-    this.router.navigate(['/searchResults']);
-    this.msgService.sendMessage(this.flight);
-    localStorage.setItem('flight', JSON.stringify(this.flight));
+    if (this.flightSearchForm.invalid) {
+      this.source = document.getElementById('source');
+      this.source.setAttribute('style', 'border:red solid 2px;');
+    } else {
+      this.buildFlightObject();
+      this.router.navigate(['/searchResults']);
+      this.msgService.sendMessage(this.flight);
+      localStorage.setItem('flight', JSON.stringify(this.flight));
+    }
   }
 }

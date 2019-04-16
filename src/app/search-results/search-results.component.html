@@ -9,9 +9,11 @@
 			<span class="card-link">{{message.totalTime}} </span>
 			<span class="card-link"> {{message.stops}} Stop ({{message.layoverTime}} LHR)</span>
 			<span class="card-link"> {{message.price}} </span>
-			<button type="button" class="btn btn-info card-link" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Details</button>
-			<button type="button" class="btn btn-info card-link">Book</button>
-			<div id="collapseExample" [ngbCollapse]="isCollapsed">
+			<span class="rightFloat">
+				<button type="button" class="btn btn-info card-link" (click)="isLHRCollapsed = !isLHRCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
+				<button type="button" class="btn btn-info card-link">Book</button>
+			</span>	
+			<div id="LHR" [ngbCollapse]="isLHRCollapsed">
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
 				</div>
@@ -19,7 +21,7 @@
 					<div class="card-link"> {{message.departureTime}} . {{message.source}} </div>
 				</div>
 				<div class="card-text text-muted">
-					<div class="card-link"> {{message.arrivalTimeAtStop}} . {{message.stopName}} </div>
+					<div class="card-link"> {{message.arrivalTimeAtStop}} . "Heathrow Airport LHR" </div>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -31,7 +33,171 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-					<div class="card-link"> {{message.departureTimeFromStop}} . {{message.stopName}} </div>
+					<div class="card-link"> {{message.departureTimeFromStop}} . "Heathrow Airport LHR" </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTime}} . {{message.destination}} </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card">
+		<div class="card-header"><b>{{message.source}} -> {{message.destination}}  <span class="rightFloat">Date: {{message.date.year}}/{{message.date.month}}/{{message.date.day}}</span></b>
+		</div>
+		<div class="card-body">
+			<span class="card-link"> {{message.departureTime}} - {{message.arrivalTime}} </span>
+			<span class="card-link">{{message.totalTime}} </span>
+			<span class="card-link"> {{message.stops}} Stop ({{message.layoverTime}} AUH)</span>
+			<span class="card-link"> {{message.price}} </span>
+			<span class="rightFloat">
+				<button type="button" class="btn btn-info card-link" (click)="isAUHCollapsed = !isAUHCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
+				<button type="button" class="btn btn-info card-link">Book</button>
+			</span>	
+			<div id="AUH" [ngbCollapse]="isAUHCollapsed">
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTime}} . {{message.source}} </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTimeAtStop}} . "Abu Dhabi International Airport AUH" </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+						{{message.layoverTime}} layover - (AUH) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTimeFromStop}} . "Abu Dhabi International Airport AUH" </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTime}} . {{message.destination}} </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-header"><b>{{message.source}} -> {{message.destination}}  <span class="rightFloat">Date: {{message.date.year}}/{{message.date.month}}/{{message.date.day}}</span></b>
+		</div>
+		<div class="card-body">
+			<span class="card-link"> {{message.departureTime}} - {{message.arrivalTime}} </span>
+			<span class="card-link">{{message.totalTime}} </span>
+			<span class="card-link"> {{message.stops}} Stop ({{message.layoverTime}} AMS)</span>
+			<span class="card-link"> {{message.price}} </span>
+			<span class="rightFloat">
+				<button type="button" class="btn btn-info card-link" (click)="isAMSCollapsed = !isAMSCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
+				<button type="button" class="btn btn-info card-link">Book</button>
+			</span>	
+			<div id="AMS" [ngbCollapse]="isAMSCollapsed">
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTime}} . {{message.source}} </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTimeAtStop}} . Amsterdam Airport Schiphol AMS </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+						{{message.layoverTime}} layover - (AMS) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTimeFromStop}} . "Amsterdam Airport Schiphol AMS" </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTime}} . {{message.destination}} </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-header"><b>{{message.source}} -> {{message.destination}}  <span class="rightFloat">Date: {{message.date.year}}/{{message.date.month}}/{{message.date.day}}</span></b>
+		</div>
+		<div class="card-body">
+			<span class="card-link"> {{message.departureTime}} - {{message.arrivalTime}} </span>
+			<span class="card-link">{{message.totalTime}} </span>
+			<span class="card-link"> {{message.stops}} Stop ({{message.layoverTime}} DOH)</span>
+			<span class="card-link"> {{message.price}} </span>
+			<span class="rightFloat">
+				<button type="button" class="btn btn-info card-link" (click)="isDOHCollapsed = !isDOHCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
+				<button type="button" class="btn btn-info card-link">Book</button>
+			</span>	
+			<div id="DOH" [ngbCollapse]="isDOHCollapsed">
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTime}} . {{message.source}} </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTimeAtStop}} . "Hamad International Airport DOH" </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+						{{message.layoverTime}} layover - (DOH) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTimeFromStop}} . "Hamad International Airport DOH" </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTime}} . {{message.destination}} </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-header"><b>{{message.source}} -> {{message.destination}}  <span class="rightFloat">Date: {{message.date.year}}/{{message.date.month}}/{{message.date.day}}</span></b>
+		</div>
+		<div class="card-body">
+			<span class="card-link"> {{message.departureTime}} - {{message.arrivalTime}} </span>
+			<span class="card-link">{{message.totalTime}} </span>
+			<span class="card-link"> {{message.stops}} Stop ({{message.layoverTime}} DXB)</span>
+			<span class="card-link"> {{message.price}} </span>
+			<span class="rightFloat">
+				<button type="button" class="btn btn-info card-link" (click)="isDXBCollapsed = !isDXBCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
+				<button type="button" class="btn btn-info card-link">Book</button>
+			</span>	
+			<div id="DXB" [ngbCollapse]="isDXBCollapsed">
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTime}} . {{message.source}} </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.arrivalTimeAtStop}} . "Dubai International Airport DXB" </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+						{{message.layoverTime}} layover - (DXB) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> <hr> </div>
+				</div>
+				<div class="card-text text-muted">
+					<div class="card-link"> {{message.departureTimeFromStop}} . "Dubai International Airport DXB" </div>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> {{message.arrivalTime}} . {{message.destination}} </div>
@@ -40,5 +206,5 @@
 		</div>
 	</div>
 </div>
-
+<app-footer></app-footer>
 
