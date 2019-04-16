@@ -7,6 +7,9 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { EventsComponent } from './events/events.component';
+import { HotelsComponent } from './hotels/hotels.component';
+import { TravelGuideComponent } from './travel-guide/travel-guide.component';
+import { CurrencyPartnerComponent } from './currency-partner/currency-partner.component';
 
 
 const routes: Routes = [
@@ -17,7 +20,10 @@ const routes: Routes = [
   {path: 'signUp', component: SignupComponent},
   {path: 'login', component: LoginComponent},
   {path: 'searchResults', component: SearchResultsComponent},
-  {path: 'events', component: EventsComponent}
+  {path: 'events', component: EventsComponent},
+  {path: 'hotels', component: HotelsComponent},
+  {path: 'travelGuide', component: TravelGuideComponent},
+  {path: 'currencyPartner', component: CurrencyPartnerComponent}
 ];
 
 @NgModule({
