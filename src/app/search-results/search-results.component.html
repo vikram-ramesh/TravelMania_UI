@@ -27,7 +27,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (LHR) <span class="rightFloat"><button type="button" class="btn btn-info card-link" routerLink="/events">Check Events</button></span>
+						{{message.layoverTime}} layover - (LHR) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -68,7 +68,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (AUH) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+						{{message.layoverTime}} layover - (AUH) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -109,7 +109,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (AMS) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+						{{message.layoverTime}} layover - (AMS) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -150,7 +150,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (DOH) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+						{{message.layoverTime}} layover - (DOH) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -191,7 +191,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (DXB) <span class="rightFloat"><button type="button" class="btn btn-info card-link">Check Events</button></span>
+						{{message.layoverTime}} layover - (DXB) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -205,6 +205,19 @@
 			</div>
 		</div>
 	</div>
+
+	<ng-template #testModal let-c="close" let-d="dismiss">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Login to TravelMania!!</h4>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-info" (click)="c('yes')">Go to Login</button>
+				<button type="button" class="btn btn-info" (click)="c('no')">Stay here!</button>
+			</div>
+		</div>
+	  </ng-template>
 </div>
 <app-footer></app-footer>
 
