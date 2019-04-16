@@ -38,7 +38,7 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
-  openModal(testModal){
+  openModal(testModal) {
     this.modalService.open(testModal, {centered: true}).result.then((result) => {
       if (result === 'yes') {
         this.router.navigate(['/login']);
