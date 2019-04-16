@@ -17,7 +17,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Short Film Fest</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'shortFilm')">Register</button>
+                  <button type="button" *ngIf="!shortFilmRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'shortFilm')">Register</button>
+                  <button type="button" *ngIf="shortFilmRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'shortFilm')">Deregister</button>
                 </div>
             </div>
         </div>
@@ -27,7 +28,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Magic Show</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-info">Register</a>
+                  <button type="button" *ngIf="!magicRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'magic')">Register</button>
+                  <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button>
                 </div>
             </div>
         </div>
@@ -38,7 +40,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Puppet Show</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-info">Register</a>
+                  <button type="button" *ngIf="!puppetRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'puppet')">Register</button>
+                  <button type="button" *ngIf="puppetRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'puppet')">Deregister</button>
                 </div>
             </div>
         </div>
@@ -51,7 +54,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Game Zone</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-info">Register</a>
+                  <button type="button" *ngIf="!gameRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'game')">Register</button>
+                  <button type="button" *ngIf="gameRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'game')">Deregister</button>
                 </div>
             </div>
         </div>
@@ -61,7 +65,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Poppery Tutorials</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-info">Register</a>
+                  <button type="button" *ngIf="!potteryRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'pottery')">Register</button>
+                  <button type="button" *ngIf="potteryRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'pottery')">Deregister</button>
                 </div>
             </div>
         </div>
@@ -72,7 +77,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Karaoke Station</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-info">Register</a>
+                  <button type="button" *ngIf="!karaokeRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'karaoke')">Register</button>
+                  <button type="button" *ngIf="karaokeRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'karaoke')">Deregister</button>
                 </div>
             </div>
         </div>
@@ -103,6 +109,14 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">You have already registered for other event!</h4>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventDeregiModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You are no longer registered to this event!</h4>
           </div>
         </div>
     </ng-template>
