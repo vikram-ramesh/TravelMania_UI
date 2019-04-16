@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit() {
     this.processingStart = true;
     const userCredentials = {
       email: this.loginForm.controls.email.value,
@@ -41,11 +41,11 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('User', JSON.stringify(response));
     }, (err) => {
       this.success = false;
-      if(err.status === 401){
+      if (err.status === 401) {
         this.message = 'Invalid Email Id \ Password';
       }
 
-      if(err.status === 400){
+      if (err.status === 400) {
         this.message = 'User does not exist';
       }
     });

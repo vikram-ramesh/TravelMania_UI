@@ -8,11 +8,10 @@ import { User } from '../model/User';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isCollapsed: boolean = true;
+  isCollapsed = true;
   userSignedIn = false;
   user: string;
   data: User;
-
 
   constructor(private router: Router) { }
 
@@ -25,9 +24,6 @@ export class HeaderComponent implements OnInit {
       this.user = this.data['user'].firstName;
     }
   }
-  // toggleNavbar() {
-  //   this.navbarOpen = !this.navbarOpen;
-  // }
 
   logOut() {
     sessionStorage.removeItem('User');
