@@ -16,6 +16,9 @@ import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { EventsComponent } from './events/events.component';
 import { SearchFilterPipe } from './pipe/search-filter.pipe';
+import { HotelsComponent } from './hotels/hotels.component';
+import { TravelGuideComponent } from './travel-guide/travel-guide.component';
+import { CurrencyPartnerComponent } from './currency-partner/currency-partner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,10 @@ import { SearchFilterPipe } from './pipe/search-filter.pipe';
     LoginComponent,
     SearchResultsComponent,
     EventsComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    HotelsComponent,
+    TravelGuideComponent,
+    CurrencyPartnerComponent
   ],
   imports: [
     BrowserModule,
