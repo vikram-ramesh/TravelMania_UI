@@ -11,7 +11,6 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { BlogComponent } from './blog/blog.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
@@ -25,7 +24,6 @@ import { SearchFilterPipe } from './pipe/search-filter.pipe';
     FooterComponent,
     AboutUsComponent,
     ContactUsComponent,
-    BlogComponent,
     SignupComponent,
     LoginComponent,
     SearchResultsComponent,
@@ -48,4 +46,4 @@ import { SearchFilterPipe } from './pipe/search-filter.pipe';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
