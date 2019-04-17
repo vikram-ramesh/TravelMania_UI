@@ -13,7 +13,7 @@
     <div class="carousel-caption searchCarousel">
       <h3>Search for your trip</h3>
       <form [formGroup]="flightSearchForm" class="form-inline searchFormInline">
-        <div class="form-group col-sm-12 col-md-3">
+        <!-- <div class="form-group col-sm-12 col-md-3">
           <input type="text" id="source" formControlName = "source"  [(ngModel)] = "sourceText" (keyup)="keyPress($event)" placeholder="Source" class="form-control"> 
           <div *ngIf = "showDropDown" class = "state-dropdown">
             <div>
@@ -22,8 +22,11 @@
                 </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="form-group col-sm-12 col-md-3">
+          <input id="source" type="text" class="form-control" formControlName="source" [(ngModel)]="modelSource" [ngbTypeahead]="searchSource" placeholder="Source"/>
+        </div>
+        <!-- <div class="form-group col-sm-12 col-md-3">
           <input type="text" id="destination" formControlName = "destination" [(ngModel)] = "destinationText"  (keyup)="keyPressDest($event)" placeholder="Destination" class="form-control">
           <div *ngIf = "showDropDownDest" class = "state-dropdown">
               <div>
@@ -32,8 +35,11 @@
                   </div>
               </div>
             </div>
-        </div>
-      
+        </div> -->
+        <div class="form-group col-sm-12 col-md-3">
+            <input id="destination" type="text" class="form-control" formControlName="destination" [(ngModel)]="modelDestination" [ngbTypeahead]="searchDestination" placeholder="Destination"/>
+        </div>       
+
         <div class="form-group col-sm-12 col-md-3">
           <div class="input-group">
             <input class="form-control" placeholder="yyyy-mm-dd" formControlName="date"
@@ -43,8 +49,7 @@
             </div>
           </div>
         </div>
-
-        <input type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Submit" (click)="onSubmit()">
+        <input type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Search" (click)="onSubmit()">
       </form>
     </div>
   </ng-template>
