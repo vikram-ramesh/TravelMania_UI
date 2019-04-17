@@ -1,28 +1,41 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig, NgbTypeaheadConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from '../services/share-flight-details.service';
 import { Flight } from '../model/Flight';
-import { $ } from 'protractor';
-import { Input } from '@angular/compiler/src/core';
+import { Observable } from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-landing-page-component',
   templateUrl: './landing-page-component.component.html',
   styleUrls: ['./landing-page-component.component.css'],
-
-  providers: [NgbCarouselConfig]
+  providers: [NgbTypeaheadConfig, NgbCarouselConfig]
 })
 export class LandingPageComponentComponent implements OnInit {
   source: any;
+  destination: any;
+  date: any;
+  flag1: any;
+  flag2: any;
+  flag3: any;
   flightSearchForm: FormGroup;
   flight = new Flight();
+  destinationText = '';
   showDropDown = false;
-  states = ['Boston', "London", "Mumbai", "Moscow", 'Tokyo','Istanbul', "Bangkok", "Paris",'Dubai','New York', 'Kuala Lumpur','Seoul','Antalya', "Phuket", "Hong Kong",'Mecca', 'Barcelona', "Pattaya", 'Osaka','Bali', "Atlanta",'Los Angeles', 'Chicago', "Dallas", "Denver",'San Francisco', "Las Vegas",'Seattle', 'Charlotte', "Orlando", "	Phoenix",'Miami','Houston','Detroit', 'Philadelphia','Salt Lake City'];
+  states = ['Lima', 'Tokyo', 'Riyadh', 'Vienna', 'Shanghai', 'Taipei', 'Rome',
+  'Milan', 'Amsterdam', 'Barcelona', 'Seoul', 'Hong Kong', ' Kuala Lumpur',
+  'Istanbul', 'Hawaii', 'New York', 'Dubai', 'Singapore', 'Paris', 'Bangkok', 'London', 'Osaka', 'Barcelona',
+  'Pattaya', 'Makkah', 'Phuket', 'Antalya', 'Bali', 'Osaka', 'Pattaya', 'Las Vegas',
+  'San Francisco', 'Chicago', 'Seattle', 'Napa', 'Portland', 'Seattle', 'Mumbai', 'Kolkata',
+  'Bangalore', 'Hyderabad', 'Delhi', 'Chennai', 'Jaipur', 'Philadelphia', 'Boise', 'Boston'];
+  showDropDownDest = false;
+  sourceModel: any;
+  destinationModel: any;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private config: NgbCarouselConfig,
-              private msgService: MessageService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, 
+              private msgService: MessageService, configTy: NgbTypeaheadConfig,private config: NgbCarouselConfig) {
     this.flightSearchForm = this.formBuilder.group({
       source: ['', Validators.required],
       destination: ['', Validators.required],
@@ -31,22 +44,65 @@ export class LandingPageComponentComponent implements OnInit {
 
     this.config.showNavigationArrows = false;
     this.config.showNavigationIndicators = false;
+
+    configTy.showHint = true;
   }
 
   ngOnInit() {
   }
 
+  searchSource = (text$: Observable<string>) =>
+  text$.pipe(
+    debounceTime(200),
+    distinctUntilChanged(),
+    map(term => term.length < 2 ? []
+      : this.states.filter(v => v.toLowerCase().startsWith(term.toLocaleLowerCase())).splice(0, 10))
+  )
+
+  searchDestination = (text$: Observable<string>) =>
+  text$.pipe(
+    debounceTime(200),
+    distinctUntilChanged(),
+    map(term => term.length < 2 ? []
+      : this.states.filter(v => v.toLowerCase().startsWith(term.toLocaleLowerCase())).splice(0, 10))
+  )
+
   toggleDropDown() {
     this.showDropDown = !this.showDropDown;
   }
 
-  selectValue(value) {
-    this.flightSearchForm.patchValue({source: value});
-    this.showDropDown = false;
+  // keyPress(event: any)
+  // {
+  //   this.showDropDown = !this.showDropDown;
+  //   if(event.keyCode === 8 && this.sourceText == '') {
+  //         this.showDropDown = false;
+  //   }
+  // }
+  // keyPressDest(event: any)
+  // {
+  //   this.showDropDownDest = !this.showDropDownDest;
+  //   if(event.keyCode === 8 && this.destinationText == '') {
+  //         this.showDropDownDest = false;
+  //   }
+  // }
+  
+  // selectSourceValue(value){
+  //   this.flightSearchForm.controls['source'].setValue(value);
+  //   this.sourceText = this.flightSearchForm.controls['source'].value;
+  //   this.showDropDown = false;
+  // }
+
+  selectDestValue(value){
+    this.flightSearchForm.controls['destination'].setValue(value);
+    this.destinationText = this.flightSearchForm.controls['destination'].value;
+    this.showDropDownDest = false;
   }
 
-  getSearchValue() {
-    return this.flightSearchForm.value.source;
+  // getSearchValueSource(){
+  //   return this.sourceText;
+  // }
+  getSearchValueDest(){
+    return this.destinationText;
   }
 
   buildFlightObject() {
@@ -68,7 +124,40 @@ export class LandingPageComponentComponent implements OnInit {
     if (this.flightSearchForm.invalid) {
       this.source = document.getElementById('source');
       this.source.setAttribute('style', 'border:red solid 2px;');
-    } else {
+    } 
+    if (this.flightSearchForm.value.source!="") {
+      this.flag1=true;
+      this.source = document.getElementById('source');
+      this.source.setAttribute('style', 'border:white solid 0px;');
+    } 
+    if(this.flightSearchForm.value.destination==""){
+      this.flag2=false;
+      this.destination = document.getElementById('destination');
+      this.destination.setAttribute('style', 'border:red solid 2px;');
+    }
+    if (this.flightSearchForm.value.destination!="") {
+      this.flag2=true;
+      this.destination = document.getElementById('destination');
+      this.destination.setAttribute('style', 'border:white solid 0px;');
+    }
+    if(this.flightSearchForm.value.date== undefined){
+      this.flag3=false;
+      this.date = document.getElementById('date');
+      this.date.setAttribute('style', 'border:red solid 2px;');
+    }
+    if(this.flightSearchForm.value.source == this.flightSearchForm.value.destination){
+      this.flag3=false;
+      this.destination = document.getElementById('destination');      
+      this.source.setAttribute('style', 'border:red solid 2px;');
+      this.destination.setAttribute('style', 'border:red solid 2px;');
+    }
+    else{
+      this.flag3=true;
+      this.date = document.getElementById('date');
+      this.date.setAttribute('style', 'border:white solid 0px;');
+      
+    }
+    if(this.flag1 && this.flag2 && this.flag3) {
       this.buildFlightObject();
       this.router.navigate(['/searchResults']);
       this.msgService.sendMessage(this.flight);
