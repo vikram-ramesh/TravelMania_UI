@@ -10,6 +10,7 @@ import { EventsComponent } from './events/events.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { TravelGuideComponent } from './travel-guide/travel-guide.component';
 import { CurrencyPartnerComponent } from './currency-partner/currency-partner.component';
+import { PassengerDetailsComponent } from './passenger-details/passenger-details.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'events', component: EventsComponent},
   {path: 'hotels', component: HotelsComponent},
   {path: 'travelGuide', component: TravelGuideComponent},
-  {path: 'currencyPartner', component: CurrencyPartnerComponent}
+  {path: 'currencyPartner', component: CurrencyPartnerComponent},
+  {path: 'passengerDetails', component: PassengerDetailsComponent}
 ];
 
 @NgModule({

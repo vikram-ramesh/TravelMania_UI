@@ -21,6 +21,7 @@ export class SearchResultsComponent implements OnInit {
   flights: any = [];
   userSignedIn = false;
   flightSearchForm: FormGroup;
+  
 
   constructor(private messageService: MessageService, private router: Router,
               private modalService: NgbModal, private formBuilder: FormBuilder) {
@@ -56,6 +57,10 @@ export class SearchResultsComponent implements OnInit {
         console.log('no');
       }
     });
+  }
+
+  bookFlight(){
+    this.router.navigate(['/passengerDetails']);
   }
 
 }

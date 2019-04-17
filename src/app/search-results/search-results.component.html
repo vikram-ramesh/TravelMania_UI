@@ -50,7 +50,7 @@
 			<span class="card-link"> {{message.price}} </span>
 			<span class="rightFloat">
 				<button type="button" class="btn btn-info card-link" (click)="isLHRCollapsed = !isLHRCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
-				<button type="button" class="btn btn-info card-link">Book</button>
+				<button type="submit" class="btn btn-info card-link" value="Submit" (click)="bookFlight()">Book</button>
 			</span>	
 			<div id="LHR" [ngbCollapse]="isLHRCollapsed">
 				<div class="card-text text-muted">

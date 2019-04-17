@@ -19,6 +19,7 @@ import { SearchFilterPipe } from './pipe/search-filter.pipe';
 import { HotelsComponent } from './hotels/hotels.component';
 import { TravelGuideComponent } from './travel-guide/travel-guide.component';
 import { CurrencyPartnerComponent } from './currency-partner/currency-partner.component';
+import { PassengerDetailsComponent } from './passenger-details/passenger-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { CurrencyPartnerComponent } from './currency-partner/currency-partner.co
     SearchFilterPipe,
     HotelsComponent,
     TravelGuideComponent,
-    CurrencyPartnerComponent
+    CurrencyPartnerComponent,
+    PassengerDetailsComponent
   ],
   imports: [
     BrowserModule,

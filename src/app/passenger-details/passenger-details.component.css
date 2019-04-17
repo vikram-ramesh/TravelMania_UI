@@ -1,0 +1,44 @@
+.centered-form{
+    margin: 0 auto;
+    float: none;
+   
+}
+
+.middle{
+    margin-left: 350px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(120, 226, 240, 0.3) 20px 20px 20px;
+    padding: 20px;
+}
+
+.centered-form .panel .panel-heading{
+    text-align: center;
+    padding: .5em;
+}
+
+.centered-form .panel .panel-body{
+    margin-top: .5em;
+}
+
+.error{
+    color: red;
+    font-size: 13px;
+}
+
+.container{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    border: 2px solid black;
+
+    padding: 20px;
+}
+
+.small{
+    font-size: 13px;
+    color: red;
+    font-weight: bold;
+}
