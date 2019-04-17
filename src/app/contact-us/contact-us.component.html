@@ -1,4 +1,11 @@
 <app-header></app-header>
+<head><script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init("user_b0usKkuWEtIVQlb6wrVAd")
+     })();
+  </script>
+  </head>
 <div class="tp">
   <br><br><br>
 <div class="site-blocks-cover inner-page-cover" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -6,18 +13,18 @@
       <div class="row align-items-center justify-content-center text-center">
       </div>
     </div>
-  </div>  
+  </div>
 
 <div class="site-section">
   <div class="container">
     <div class="row">
-     
+
       <div class="col-md-7 mb-5">
         <form action="#" class="p-5 bg-info">
          <div class="row form-group">
             <div class="col-md-6 mb-3 mb-md-0">
               <label class="text-black co" for="fname">First Name</label>
-              <input type="text" id="fname" class="form-control">
+              <input type="text" id="fname" class="form-control" #newfname>
             </div>
             <div class="col-md-6">
               <label class="text-black co" for="lname">Last Name</label>
@@ -26,37 +33,37 @@
           </div>
 
           <div class="row form-group">
-            
+
             <div class="col-md-12">
-              <label class="text-black co" for="email">Email</label> 
+              <label class="text-black co" for="email">Email</label>
               <input type="email" id="email" class="form-control">
             </div>
           </div>
 
           <div class="row form-group">
-            
+
             <div class="col-md-12">
-              <label class="text-black co" for="subject">Subject</label> 
+              <label class="text-black co" for="subject">Subject</label>
               <input type="subject" id="subject" class="form-control">
             </div>
           </div>
 
           <div class="row form-group">
             <div class="col-md-12">
-              <label class="text-black co" for="message">Message</label> 
-              <textarea name="message" id="message" cols="30" rows="11" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+              <label class="text-black co" for="message">Message</label>
+              <textarea name="message" id="message" cols="30" rows="11" class="form-control" placeholder="Write your notes or questions here..." #newmessage></textarea>
             </div>
           </div>
 
           <div class="row form-group">
             <div class="col-md-12">
-              <input type="submit" class="btn btn-dark" value="Send Message">
+              <input (click) = "shareEmail(newfname,newmessage)" type="submit" class="btn btn-dark" value="Send Message">
             </div>
           </div>
      </form>
       </div>
       <div class="col-md-5">
-        
+
         <div class="p-4 mb-4 bg-info">
           <p class="mb-0 font-weight-bold co">Address</p>
           <p class="mb-4 co">405, Ell Hall, Boston, Massachusetts, USA</p>
@@ -68,7 +75,7 @@
           <p class="mb-0"><a href="#" class="co">customerservice@travelmania.com</a></p>
 
         </div>
-        
+
         <div class="p-4 mb-3 bg-info cd">
           <img src="assets/hero_bg_1.jpg" alt="Image" class="img-fluid mb-4 rounded">
           <p class="co sz">Whether you’re in search of a tropical getaway where you can spend your sojourn lounging in a beach chair, or you have your heart set on a city destination where you can pass the time exploring the nightlife scene, leave it to TravelMania to match you up with your prime vacation. We connect you with the best travel deals on vacations you’ve only previously dreamt about.</p>
