@@ -17,10 +17,9 @@ export class PassengerDetailsComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient) { 
     this.passDetailsForm = this.formBuilder.group({
       fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
-      age: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
+      age: ['', [Validators.required, Validators.pattern('[0-1]{1}[0-9]{0,2}')]],
       email: ['', [Validators.required, Validators.email]],
-      contactNo: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
-      repassword: ['', Validators.required]
+      contactNo: ['', [Validators.required, Validators.pattern('^\d{10}$')]]
     });
   }
 
