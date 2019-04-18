@@ -1,5 +1,5 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark space">
-    <a class="navbar-brand text-light" routerLink="/">TravelMania</a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light space">
+    <a class="navbar-brand" routerLink="/"><img src="../../assets/TravelManiaLogo.JPG" alt=""></a>
     <button (click) ="isCollapsed = !isCollapsed"class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-light" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/hotels">Hotels</a>
+          <a class="nav-link" routerLink="/hotels">Hotels</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/travelGuide">Travel Guide</a>
+          <a class="nav-link" routerLink="/travelGuide">Travel Guide</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/currencyPartner">Upcoming Events</a>
+          <a class="nav-link" routerLink="/currencyPartner">Upcoming Events</a>
         </li>
       </ul>
       <form *ngIf="!userSignedIn" class="form-inline my-2 my-lg-0">

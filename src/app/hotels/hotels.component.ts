@@ -1,4 +1,3 @@
-//import { Component, OnInit } from '@angular/core';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 declare var google: any;
 
@@ -8,19 +7,13 @@ declare var google: any;
   styleUrls: ['./hotels.component.css']
 })
 export class HotelsComponent implements AfterViewInit {
-
-
-  name = 'Angular 5';
-  uluru: Object = { lat: -25.363, lng: 131.044 };
-  map: Object;
-  marker: Object;
+  uluru = { lat: -25.363, lng: 131.044 };
+  map: any;
+  marker: any;
   zoom: number;
   @ViewChild('map') mapRef: ElementRef;
 
   constructor() { }
-
-  // ngOnInit() {
-  // }
 
   ngAfterViewInit() {
     //used setTimeout google map is delayed in loading, in stackBlitz
@@ -35,9 +28,7 @@ export class HotelsComponent implements AfterViewInit {
         map: this.map
       });
 
-    }, 2000)
-
-    //console.log(this.map.getZoom())
+    }, 2000 )
   }
   reset() {
     this.uluru = { lat: 27.175014 , lng: 78.042152 };
