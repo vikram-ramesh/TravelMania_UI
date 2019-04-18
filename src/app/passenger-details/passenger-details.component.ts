@@ -12,9 +12,13 @@ export class PassengerDetailsComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    if (sessionStorage.getItem('User')) {
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
-  add(){
+  add() {
       this.details.push({name: '', age: '', gender: ''});
   }
 
