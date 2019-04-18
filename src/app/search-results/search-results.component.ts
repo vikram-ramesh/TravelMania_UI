@@ -59,8 +59,12 @@ export class SearchResultsComponent implements OnInit {
     });
   }
 
-  bookFlight(){
-    this.router.navigate(['/passengerDetails']);
+  bookFlight(testModal) {
+    if(this.userSignedIn) {
+      this.router.navigate(['/passengerDetails']);
+    } else {
+      this.openModal(testModal);
+    }
   }
 
 }

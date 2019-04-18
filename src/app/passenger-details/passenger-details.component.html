@@ -11,7 +11,6 @@
         </div>
         
         <div class="form-group col-md-3">
-          <!-- <label for="inputZip">Contact</label> -->
           <input type="text" formControlName="contactNo" class="form-control" id="inputName" placeholder="contact">
           <div *ngIf="processingStart && passDetailsForm.controls.email.errors" class="error">
               <div *ngIf="passDetailsForm.controls.email.errors.required"> Contact Number is mandatory</div>
@@ -20,16 +19,18 @@
         </div>
 
         <div class="form-group col-md-2">
-                <button class="form-control btn btn-info" (click)="add()" type="button">Add <span class="fa fa-plus"></span></button>
+          <button class="form-control btn btn-info" (click)="add()" type="button">Add <span class="fa fa-plus"></span></button>
         </div>
 
         <div class="form-group col-md-2">
             <button class="form-control btn btn-info" (click)="remove()" type="button">Remove <span class="fa fa-minus"></span></button>
         </div>
       </div>
+
       <hr>
       <h3>Enter passenger details <span class="small"><i>please enter details per passenger</i></span></h3>
       <hr>
+      
       <div class="form-row" *ngFor="let d of details; let i=index">
         <div class="form-group col-md-6">
           <label for="inputCity">Full Name</label>
@@ -59,9 +60,7 @@
       </div>
       <div class="form-group col-md-2">
           <button class="form-control btn btn-info" type="submit">Submit</button>
-    </div>
-    </form>
-   
-   </div>
-
-   <app-footer></app-footer>
+      </div>
+  </form>
+</div>
+<app-footer></app-footer>
