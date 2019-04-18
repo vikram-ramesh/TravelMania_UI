@@ -42,8 +42,9 @@ export class HotelsComponent implements AfterViewInit {
     });
   }
   updateMap(lats: number, lon: number) {
-   this.zoom = this.map.getZoom();
-   alert('current zoom=' + this.zoom)
+  // this.zoom = this.map.getZoom();
+  this.zoom = 4;
+  // alert('current zoom=' + this.zoom)
    this.uluru = { lat: lats, lng: lon };
    this.map = new google.maps.Map(this.mapRef.nativeElement, {
       zoom: this.zoom,
