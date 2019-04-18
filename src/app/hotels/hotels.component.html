@@ -4,8 +4,9 @@
    <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="alert alert-warning title" role="alert">
-              Spend your layover time with us! Register for any event and enjoy your journey without break.<br><br>
-              <button type="button" class="btn btn-info" (click)="updateMap(27.175014,78.042152)">Book the hotels</button>
+              <h1>Looking for hotels in your layover time?</h1>
+              <p>Have a look at some of best hotels in the world to spend time. Relax and rejuvinate while on a break during your journey.</p><br><br>
+              <!-- <button type="button" class="btn btn-info" (click)="updateMap(27.175014,78.042152)">Book the hotels</button> -->
           </div>
       </div>
    </div>
@@ -13,22 +14,22 @@
     <div class="row">
         <div class="col-sm-4 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../../assets/emirates-abu-dhabi.jpg" style="height: 158px;" alt="Card image cap">
+                <img ngbPopover="Located on the shores of the Arabian Gulf, overlooking its own private natural bay, Emirates Palace Hotel is located on 0.8 mi stretch of private beach." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/emirates-abu-dhabi.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Short Film Fest</h5>
-                  <p class="card-text">Got some free time to spare while at the airport? Visit the Granada Bar and catch some cool new short films!</p>
-                  <button type="button"  class="btn btn-info" (click)="updateMap(23.5237,53.87695)">Register</button>
+                  <h5 class="card-title">Emirates,Abu Dhabi</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(23.5237,53.87695)">See in Map</button>
                   <!-- <button type="button" *ngIf="shortFilmRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'shortFilm')">Deregister</button> -->
                 </div>
             </div>
         </div>
         <div class="col-sm-4 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../../assets/rancho-valencia-resort.jpg" style="height: 158px;" alt="Card image cap">
+                <img ngbPopover="Located among the hills of Rancho Santa Fe, this beautiful, natural resort features a full-service spa, golf course and top-rated tennis courts. Free Wi-Fi is available at the resort." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/rancho-valencia-resort.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Magic Show</h5>
-                  <p class="card-text">Come enjoy the Magic Show at <strong>Terminal A, Near Gate 23</strong> from 4pm to 5pm. Free snacks! Catch all the fun!</p>
-                  <button type="button"  class="btn btn-info" (click)="updateMap(32.99096,-117.186134)">Register</button>
+                  <h5 class="card-title">Rancho Valencia</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(32.99096,-117.186134)">See in Map</button>
                   <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
                 </div>
             </div>
@@ -36,10 +37,10 @@
 
         <div class="col-sm-4 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../../assets/The-Westin-Excelsior,-Rome.jpg" style="height: 158px;" alt="Card image cap">
+                <img ngbPopover="The Westin Excelsior Rome is in fashionable Via Veneto, just over a quarter mile from Spagna Metro Station. It features luxurious decor with antique furniture and crystal chandeliers." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/The-Westin-Excelsior,-Rome.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Puppet Show</h5>
-                  <p class="card-text">Entertain yourself at the Puppet Show, happening at <strong>Terminal 1</strong> from 2pm to 3pm. Props included for the kids.</p>
+                  <h5 class="card-title">Westin Elixir, Rome</h5>
+                  <p class="card-text"></p>
                   <button type="button"  class="btn btn-info" (click)="updateMap(40.5890642,-74.1048034)">Register</button>
                   <!-- <button type="button" *ngIf="!puppetRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'puppet')">Register</button> -->
                   <!-- <button type="button" *ngIf="puppetRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'puppet')">Deregister</button> -->
@@ -51,11 +52,11 @@
     <div class="row">
         <div class="col-sm-4 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../../assets/boston-marriot.jpg" style="height: 158px;" alt="Card image cap">
+                <img ngbPopover="Be sure to enjoy recreational amenities, including an indoor pool, a spa tub, and a fitness center. Additional amenities at this hotel include complimentary wireless Internet access, concierge services, and gift shops/newsstands." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/boston-marriot.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Game Zone</h5>
-                  <p class="card-text">Catch some cool games at the Game Zone tonight at 7pm. Venue- Shop2, Alaister Walkway </p>
-                  <button type="button"  class="btn btn-info" (click)="updateMap(42.34734,-71.07952)">Register</button>
+                  <h5 class="card-title">Boston Marriot,Copley</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(42.34734,-71.07952)">See in Map</button>
                   <!-- <button type="button" *ngIf="!gameRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'game')">Register</button> -->
                   <!-- <button type="button" *ngIf="gameRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'game')">Deregister</button> -->
                 </div>
@@ -63,10 +64,10 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../../assets/belvedre.jpg" style="height: 158px;" alt="Card image cap">
+                <img ngbPopover="Hotel Belvedere is self-described as a bike hotel, meaning that it specializes in making your cycling-centric getaway as comfortable as possible (think: guided tours, top-notch equipment, tune-up services and more.) Off the saddle? Enjoy beach time, pool time, spa time – all intended to help you fully unwind." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/belvedre.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Hotel Belvedere, Italy</h5>
-                  <p class="card-text">Hotel Belvedere is self-described as a bike hotel, meaning that it specializes in making your cycling-centric getaway as comfortable as possible (think: guided tours, top-notch equipment, tune-up services and more.) Off the saddle?</p>
+                  <p class="card-text"></p>
                   <button type="button"  class="btn btn-info" (click)="updateMap(46.14189,10.96429)">Register</button>
                   <!-- <button type="button" *ngIf="!potteryRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'pottery')">Register</button> -->
                   <!-- <button type="button" *ngIf="potteryRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'pottery')">Deregister</button> -->
@@ -76,14 +77,15 @@
 
         <div class="col-sm-4 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../../assets/karaoke.JPG" style="height: 158px;" alt="Card image cap">
+                <img ngbPopover="At Nayara Springs in Costa Rica, guests get the authentic rainforest experience with a luxury-hotel twist – think infinity pool, outdoor spa treatments, personal hosts, and neighborly toucans. Only way in and out is a footbridge that stretches above the tree canopies …not that you’d actually ever want to leave." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/nayara-springs.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Karaoke Station</h5>
-                  <p class="card-text">Have some fun time at the Karaoke Session on 23rd Jan from 8pm-11pm at Lou Bar.</p>
-                  <button type="button"  class="btn btn-info" (click)="updateMap(10.483359,-84.680176)">Register</button>
+                  <h5 class="card-title">Nyra Springs,Costa</h5>
+                  <p class="card-text" ></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(10.483359,-84.680176)">See in Map</button>
                   <!-- <button type="button" *ngIf="!karaokeRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'karaoke')">Register</button> -->
                   <!-- <button type="button" *ngIf="karaokeRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'karaoke')">Deregister</button> -->
                 </div>
+
             </div>
         </div>
     </div>
@@ -140,13 +142,13 @@
   </div>
 
 
-<p>
+<!-- <p>
   Start editing to see some magic happen :)
-</p>
-<button (click)="updateMap(27.175014,78.042152)">Go To Perth</button>
-<button (click)="updateMap(-33.8688,151.2093)">Go To Sydney</button>
-<button (click)="reset()">Reset</button>
-<div #map style="height:400px;width:400px"></div>
+</p> -->
+<!-- <button (click)="updateMap(27.175014,78.042152)">Go To Perth</button>
+<button (click)="updateMap(-33.8688,151.2093)">Go To Sydney</button> -->
+<!-- <button (click)="reset()">Reset</button> -->
+<div #map style="margin-top:20px;margin-bottom:20px; margin-left:40px;height:400px;width:90%"></div>
 
 <!-- <div class="container">
    <div class="row">
