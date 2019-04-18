@@ -48,11 +48,11 @@ export class EventsComponent implements OnInit {
 
   warnUser(testModal: any) {
     if (sessionStorage.getItem('event')) {
-      //navigate user towards ticket booking
+      this.router.navigate(['/passengerDetails']);
     } else {
       this.modalService.open(testModal, {centered: true}).result.then((result) => {
         if (result === 'yes') {
-          //navigate user towards ticket booking
+          this.router.navigate(['/passengerDetails']);
         } else {
           console.log('no');
         }
