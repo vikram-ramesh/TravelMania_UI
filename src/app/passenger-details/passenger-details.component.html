@@ -1,14 +1,22 @@
 <app-header></app-header>
 <div class="container">
-    <form >
+    <form [formGroup]="passDetailsForm" (ngSubmit)="onSubmit()" >
       <div class="form-row">
         <div class="form-group col-md-5">
-          <input type="text" class="form-control" id="inputName" placeholder="email">
+          <input type="text" formControlName="email" class="form-control" id="inputName" placeholder="email">
+          <div *ngIf="processingStart && passDetailsForm.controls.email.errors" class="error">
+              <div *ngIf="passDetailsForm.controls.email.errors.required"> Email is mandatory</div>
+              <div *ngIf="passDetailsForm.controls.email.errors.pattern"> Invalid Email Id</div>
+            </div>
         </div>
         
         <div class="form-group col-md-3">
           <!-- <label for="inputZip">Contact</label> -->
-          <input type="text" class="form-control" id="inputName" placeholder="contact">
+          <input type="text" formControlName="contactNo" class="form-control" id="inputName" placeholder="contact">
+          <div *ngIf="processingStart && passDetailsForm.controls.email.errors" class="error">
+              <div *ngIf="passDetailsForm.controls.email.errors.required"> Contact Number is mandatory</div>
+              <div *ngIf="passDetailsForm.controls.email.errors.pattern"> Invalid Contact Number</div>
+          </div>
         </div>
 
         <div class="form-group col-md-2">
@@ -25,11 +33,19 @@
       <div class="form-row" *ngFor="let d of details; let i=index">
         <div class="form-group col-md-6">
           <label for="inputCity">Full Name</label>
-          <input type="text" class="form-control" id="inputName" >
+          <input type="text" formControlName="fullName" class="form-control" id="inputName">
+          <div *ngIf="passDetailsForm && passDetailsForm.controls.name.errors" class="error">
+              <div *ngIf="passDetailsForm.controls.name.errors.required">Name is mandatory</div>
+              <div *ngIf="passDetailsForm.controls.name.errors.pattern"> Name must contain only alphabets</div>
+          </div>
         </div>
         <div class="form-group col-md-1">
           <label for="inputState">Age</label>
-          <input type="text" class="form-control" id="inputAge" >
+          <input type="text" formControlName="age" class="form-control" id="inputAge" >
+          <div *ngIf="passDetailsForm && passDetailsForm.controls.age.errors" class="error">
+              <div *ngIf="passDetailsForm.controls.age.errors.required">Age is mandatory</div>
+              <div *ngIf="passDetailsForm.controls.age.errors.pattern"> Age must contain numbers</div>
+          </div>
         </div>
         <div class="form-group col-md-2">
           <label for="inputZip">Gender</label>
