@@ -32,3 +32,7 @@ form h3{
     font-weight: bold;
     text-transform: capitalize;
 }
+
+img{
+    border-radius: 45%;
+}
