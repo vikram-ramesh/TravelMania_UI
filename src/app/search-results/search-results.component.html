@@ -2,7 +2,7 @@
 
 <div class="container">
 
-<div class="searchcard">
+<!-- <div class="searchcard">
 	<div class="co">
 		<form [formGroup]="flightSearchForm" class="form-inline">
 		<div class="form-group col-sm-12 col-md-3">
@@ -38,7 +38,7 @@
 			  <input type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Submit" (click)="onSubmit()">
 			  </form>
 	</div>
-</div>
+</div> -->
 			 
 	<div class="card">
 		<div class="card-header"><b>{{message.source}} -> {{message.destination}}  <span class="rightFloat">Date: {{message.date.year}}/{{message.date.month}}/{{message.date.day}}</span></b>
@@ -50,7 +50,7 @@
 			<span class="card-link"> {{message.price}} </span>
 			<span class="rightFloat">
 				<button type="button" class="btn btn-info card-link" (click)="isLHRCollapsed = !isLHRCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
-				<button type="submit" class="btn btn-info card-link" value="Submit" (click)="bookFlight()">Book</button>
+				<button type="submit" class="btn btn-info card-link" value="Submit" (click)="bookFlight(testModal)">Book</button>
 			</span>	
 			<div id="LHR" [ngbCollapse]="isLHRCollapsed">
 				<div class="card-text text-muted">

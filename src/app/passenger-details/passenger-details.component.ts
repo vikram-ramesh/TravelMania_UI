@@ -40,7 +40,10 @@ export class PassengerDetailsComponent implements OnInit {
   }
 
   remove(){
-    if(this.details.length === 1){}
-    else this.details.pop();
+    if (this.details.length === 1) {} else { this.details.pop(); }
+  }
+
+  onSubmit() {
+    alert('hello');
   }
 }
