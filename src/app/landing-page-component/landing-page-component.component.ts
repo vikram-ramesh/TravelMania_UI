@@ -34,6 +34,8 @@ export class LandingPageComponentComponent implements OnInit {
   sourceModel: any;
   destinationModel: any;
 
+
+  
   constructor(private router: Router, private formBuilder: FormBuilder, 
               private msgService: MessageService, configTy: NgbTypeaheadConfig,private config: NgbCarouselConfig) {
     this.flightSearchForm = this.formBuilder.group({
@@ -71,26 +73,7 @@ export class LandingPageComponentComponent implements OnInit {
     this.showDropDown = !this.showDropDown;
   }
 
-  // keyPress(event: any)
-  // {
-  //   this.showDropDown = !this.showDropDown;
-  //   if(event.keyCode === 8 && this.sourceText == '') {
-  //         this.showDropDown = false;
-  //   }
-  // }
-  // keyPressDest(event: any)
-  // {
-  //   this.showDropDownDest = !this.showDropDownDest;
-  //   if(event.keyCode === 8 && this.destinationText == '') {
-  //         this.showDropDownDest = false;
-  //   }
-  // }
-  
-  // selectSourceValue(value){
-  //   this.flightSearchForm.controls['source'].setValue(value);
-  //   this.sourceText = this.flightSearchForm.controls['source'].value;
-  //   this.showDropDown = false;
-  // }
+
 
   selectDestValue(value){
     this.flightSearchForm.controls['destination'].setValue(value);
@@ -98,9 +81,7 @@ export class LandingPageComponentComponent implements OnInit {
     this.showDropDownDest = false;
   }
 
-  // getSearchValueSource(){
-  //   return this.sourceText;
-  // }
+
   getSearchValueDest(){
     return this.destinationText;
   }
