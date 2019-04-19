@@ -72,7 +72,7 @@
 
           <div class="row form-group">
             <div class="col-md-12">
-              <input (click) = "shareEmail(newfname,newmessage)" type="submit" class="btn btn-light" value="Send Message">
+              <input (click) = "shareEmail(newfname,newmessage, confirmationModal)" type="submit" class="btn btn-light" value="Send Message">
             </div>
           </div>
       </form>
@@ -100,5 +100,18 @@
     </div>
   </div>
 </div>
+
+<ng-template #confirmationModal let-c="close" let-d="dismiss">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Your mail has been sent successfully!</h4>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" (click)="c('yes')">Okay!</button>
+    </div>
+  </div>
+</ng-template>
+
 </div>
 <app-footer></app-footer>
