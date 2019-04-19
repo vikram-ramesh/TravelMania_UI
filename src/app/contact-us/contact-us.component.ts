@@ -20,29 +20,28 @@ export class ContactUsComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       fname: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
       lname: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
-      msg:   ['',[Validators.required]]
-     // password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
+      msg:   ['', [Validators.required]]
     });
   }
 
   ngOnInit() {
   }
 
-  shareEmail(fname: HTMLInputElement, message: HTMLInputElement):boolean{
+  shareEmail(fname: HTMLInputElement, message: HTMLInputElement): boolean {
       this.processingStart = true;
-      emailjs.init('user_b0usKkuWEtIVQlb6wrVAd')
 
-    var service_id = 'default_service';
-     var template_id = 'template_YkodUUED';
-var template_params = {
-	to_name: fname.value,
-	reply_to: 'chinmay.jomraj7786@gmail.com',
-	message_html: message.value
-};
-   if(this.contactForm.valid) {
-     emailjs.send(service_id,template_id,template_params);
-    return false;
-   }
+      if (this.contactForm.valid) {
+        emailjs.init('user_b0usKkuWEtIVQlb6wrVAd');
 
+        var service_id = 'default_service';
+        var template_id = 'template_YkodUUED';
+        var template_params = {
+          to_name: fname.value,
+          reply_to: 'chinmay.jomraj7786@gmail.com',
+          message_html: message.value
+        };
+        emailjs.send(service_id, template_id, template_params);
+        return false;
+    }
   }
 }
