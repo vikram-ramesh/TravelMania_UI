@@ -34,6 +34,23 @@
   </ng-template>
 </ngb-carousel>
 
+<form class="form-inline searchForm">
+  <div class="form-group">
+      <input type="text" class="form-control col-sm-12 col-md-3" id="exampleInputEmail1"placeholder="Source">
+      <input type="text" class="form-control col-sm-12 col-md-3" id="exampleInputPassword1" placeholder="Destination">
+      <div class="col-sm-12 col-md-3">
+          <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+              name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-danger" (click)="d.toggle()" type="button"><span class="fa fa-calendar"></span></button>
+              </div>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-danger col-sm-12 col-md-3">Submit</button>
+  </div>
+</form>
+
   <span id="mu-featured-tours" class="middle space">
     <div class="container">
       <div class="row">
