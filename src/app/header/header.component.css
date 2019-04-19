@@ -26,9 +26,9 @@
     font-size: 13px;
 }
 
-form h3{
-    font-family: 'Tangerine';
-    font-size: 30px;
+form h5{
+    color: aliceblue;
+    font-size: 20px;
     font-weight: bold;
     text-transform: capitalize;
 }

@@ -21,6 +21,7 @@ export class LandingPageComponentComponent implements OnInit {
   flag2: any;
   flag3: any;
   flightSearchForm: FormGroup;
+  smallForm: FormGroup;
   flight = new Flight();
   destinationText = '';
   showDropDown = false;
@@ -34,9 +35,15 @@ export class LandingPageComponentComponent implements OnInit {
   sourceModel: any;
   destinationModel: any;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, 
+  constructor(private router: Router, private formBuilder: FormBuilder,
               private msgService: MessageService, configTy: NgbTypeaheadConfig,private config: NgbCarouselConfig) {
     this.flightSearchForm = this.formBuilder.group({
+      source: ['', Validators.required],
+      destination: ['', Validators.required],
+      date: ['', Validators.required]
+    });
+
+    this.smallForm = this.formBuilder.group({
       source: ['', Validators.required],
       destination: ['', Validators.required],
       date: ['', Validators.required]
