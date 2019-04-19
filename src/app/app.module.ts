@@ -20,6 +20,7 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { TravelGuideComponent } from './travel-guide/travel-guide.component';
 import { CurrencyPartnerComponent } from './currency-partner/currency-partner.component';
 import { PassengerDetailsComponent } from './passenger-details/passenger-details.component';
+import { ExecutePaymentComponent } from './execute-payment/execute-payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { PassengerDetailsComponent } from './passenger-details/passenger-details
     HotelsComponent,
     TravelGuideComponent,
     CurrencyPartnerComponent,
-    PassengerDetailsComponent
+    PassengerDetailsComponent,
+    ExecutePaymentComponent
   ],
   imports: [
     BrowserModule,

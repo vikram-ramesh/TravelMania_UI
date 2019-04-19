@@ -1,6 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
+import { MessageService  } from '../services/share-flight-details.service';
 
 @Component({
   selector: 'app-events',
@@ -16,8 +17,11 @@ export class EventsComponent implements OnInit {
   gameRegistered: boolean;
   potteryRegistered: boolean;
   karaokeRegistered: boolean;
+  message: any;
 
-  constructor(private modalService: NgbModal, private router: Router) { }
+  constructor(private messageService: MessageService, private modalService: NgbModal, private router: Router) {
+    this.message = this.messageService.getMessage() ? this.messageService.getMessage() : JSON.parse(localStorage.getItem('flight'));
+  }
 
   ngOnInit() {
     if (sessionStorage.getItem('User')) {
@@ -48,6 +52,9 @@ export class EventsComponent implements OnInit {
 
   warnUser(testModal: any) {
     if (sessionStorage.getItem('event')) {
+      this.message.eventName = sessionStorage.getItem('event');
+      this.messageService.sendMessage(this.message);
+      localStorage.setItem('flight', JSON.stringify(this.message));
       this.router.navigate(['/passengerDetails']);
     } else {
       this.modalService.open(testModal, {centered: true}).result.then((result) => {

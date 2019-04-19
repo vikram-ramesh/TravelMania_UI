@@ -35,18 +35,18 @@
         <div class="form-group col-md-6">
           <label for="inputCity">Full Name</label>
           <input type="text" formControlName="fullName" class="form-control" id="inputName">
-          <div *ngIf="passDetailsForm && passDetailsForm.controls.name.errors" class="error">
+          <!-- <div *ngIf="passDetailsForm && passDetailsForm.controls.name.errors" class="error">
               <div *ngIf="passDetailsForm.controls.name.errors.required">Name is mandatory</div>
               <div *ngIf="passDetailsForm.controls.name.errors.pattern"> Name must contain only alphabets</div>
-          </div>
+          </div> -->
         </div>
         <div class="form-group col-md-1">
           <label for="inputState">Age</label>
           <input type="text" formControlName="age" class="form-control" id="inputAge" >
-          <div *ngIf="passDetailsForm && passDetailsForm.controls.age.errors" class="error">
+          <!-- <div *ngIf="passDetailsForm && passDetailsForm.controls.age.errors" class="error">
               <div *ngIf="passDetailsForm.controls.age.errors.required">Age is mandatory</div>
               <div *ngIf="passDetailsForm.controls.age.errors.pattern"> Age must contain numbers</div>
-          </div>
+          </div> -->
         </div>
         <div class="form-group col-md-2">
           <label for="inputZip">Gender</label>
@@ -59,8 +59,21 @@
         </div>
       </div>
       <div class="form-group col-md-2">
-          <button class="form-control btn btn-info" type="submit">Submit</button>
+          <button class="form-control btn btn-info" type="submit" (click)="onSubmit(confirm)">Submit</button>
       </div>
   </form>
+
+  <ng-template #confirm let-c="close" let-d="dismiss">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Please confirm your booking</h4>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+        <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+      </div>
+    </div>
+  </ng-template>
 </div>
 <app-footer></app-footer>

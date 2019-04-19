@@ -11,6 +11,7 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { TravelGuideComponent } from './travel-guide/travel-guide.component';
 import { CurrencyPartnerComponent } from './currency-partner/currency-partner.component';
 import { PassengerDetailsComponent } from './passenger-details/passenger-details.component';
+import { ExecutePaymentComponent } from './execute-payment/execute-payment.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'hotels', component: HotelsComponent},
   {path: 'travelGuide', component: TravelGuideComponent},
   {path: 'currencyPartner', component: CurrencyPartnerComponent},
-  {path: 'passengerDetails', component: PassengerDetailsComponent}
+  {path: 'passengerDetails', component: PassengerDetailsComponent},
+  {path: 'executePayment', component: ExecutePaymentComponent}
 ];
 
 @NgModule({

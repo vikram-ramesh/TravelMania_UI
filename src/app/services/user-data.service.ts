@@ -20,4 +20,8 @@ export class UserDataService {
   getUser(user: any) {
     return this.http.get('http://localhost:3000' + '/getUser/' + user.email + '/' + user.password);
   }
+
+  startPayment(postBody: any) {
+    return this.http.post('http://localhost:3000' + '/pay/' + postBody.email, postBody);
+  }
 }
