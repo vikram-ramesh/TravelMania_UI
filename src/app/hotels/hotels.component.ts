@@ -1,3 +1,4 @@
+
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 declare var google: any;
 
@@ -11,6 +12,7 @@ export class HotelsComponent implements AfterViewInit {
   map: any;
   marker: any;
   zoom: number;
+  currentRate = 6;
   @ViewChild('map') mapRef: ElementRef;
 
   constructor() { }

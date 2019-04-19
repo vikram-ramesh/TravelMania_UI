@@ -20,15 +20,22 @@
     <div class="row">
 
       <div class="col-md-7 mb-5">
-        <form action="#" class="p-5 bg-info">
+        <form action="#" class="p-5 bg-info" [formGroup]="contactForm">
          <div class="row form-group">
             <div class="col-md-6 mb-3 mb-md-0">
               <label class="text-black co" for="fname">First Name</label>
-              <input type="text" id="fname" class="form-control" #newfname>
+              <input type="text" id="fname" formControlName="fname"class="form-control" #newfname>
+              <div *ngIf="processingStart && contactForm.controls.fname.errors" class="error">
+                  <div *ngIf="contactForm.controls.fname.errors.required"> Your Email Id is required</div>
+                </div>
+
             </div>
             <div class="col-md-6">
               <label class="text-black co" for="lname">Last Name</label>
-              <input type="text" id="lname" class="form-control">
+              <input type="text" id="lname" formControlName="lname"class="form-control">
+              <div *ngIf="processingStart && contactForm.controls.lname.errors" class="error">
+                  <div *ngIf="contactForm.controls.lname.errors.required"> Your Email Id is required</div>
+                </div>
             </div>
           </div>
 
@@ -36,7 +43,18 @@
 
             <div class="col-md-12">
               <label class="text-black co" for="email">Email</label>
-              <input type="email" id="email" class="form-control">
+              <input type="email" id="email" formControlName="email" class="form-control">
+
+              <!-- <input type="email"  formControlName="email" id="email" class="form-control input-sm" placeholder="Email Address">
+              <div *ngIf="processingStart && loginForm.controls.email.errors" class="error">
+                <div *ngIf="loginForm.controls.email.errors.required"> Your Email Id is required</div>
+              </div> -->
+
+              <div *ngIf="processingStart && contactForm.controls.email.errors" class="error">
+                  <div *ngIf="contactForm.controls.email.errors.required"> Your Email Id is required</div>
+                </div>
+
+
             </div>
           </div>
 
@@ -45,13 +63,17 @@
             <div class="col-md-12">
               <label class="text-black co" for="subject">Subject</label>
               <input type="subject" id="subject" class="form-control">
+
             </div>
           </div>
 
           <div class="row form-group">
             <div class="col-md-12">
               <label class="text-black co" for="message">Message</label>
-              <textarea name="message" id="message" cols="30" rows="11" class="form-control" placeholder="Write your notes or questions here..." #newmessage></textarea>
+              <textarea name="message" formControlName="msg"id="message" cols="30" rows="11" class="form-control" placeholder="Write your notes or questions here..." #newmessage></textarea>
+              <div *ngIf="processingStart && contactForm.controls.msg.errors" class="error">
+                  <div *ngIf="contactForm.controls.msg.errors.required"> Your Email Id is required</div>
+                </div>
             </div>
           </div>
 
