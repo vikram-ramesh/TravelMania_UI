@@ -16,7 +16,7 @@ export class PassengerDetailsComponent implements OnInit {
   no: any;
   passDetailsForm: FormGroup;
   details = [{name: '', age: '', gender: ''}];
-  bookTickets = false;
+  bookTickets = true;
   message: any;
   user: any;
   postBody: any;
@@ -25,8 +25,8 @@ export class PassengerDetailsComponent implements OnInit {
               private router: Router, private formBuilder: FormBuilder, private http: HttpClient) {
     this.passDetailsForm = this.formBuilder.group({
       fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
-      age: ['', [Validators.required, Validators.pattern('[0-9]')]],
-      email: ['', [Validators.required, Validators.email]],
+      age: ['', [Validators.required, Validators.pattern('[0-9]{1,2}')]],
+      email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&’*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$")]],
       contactNo: ['', [Validators.required, Validators.pattern('[0-9]{0,10}')]]
     });
 
@@ -42,7 +42,12 @@ export class PassengerDetailsComponent implements OnInit {
   }
 
   onSubmit(confirm: any) {
+    if(this.passDetailsForm.valid){
     this.bookTickets = true;
+    }
+    else{
+      this.bookTickets = false;  
+    }
     this.message.passengers = this.details.length;
 
     this.postBody = {
@@ -55,25 +60,27 @@ export class PassengerDetailsComponent implements OnInit {
       eventName: this.message.eventName
     };
 
-    this.modalService.open(confirm, {centered: true}).result.then((result: string) => {
-      if (result === 'yes') {
-        this.userService.startPayment(this.postBody)
-        .subscribe((response) => {
-          window.location.href = response['url'];
-        }, (error) => {
-          console.log(error);
-        });
-      } else {
-        console.log('no');
-      }
-    }).catch(error => {console.log(error); });
-    if(this.passDetailsForm.valid){
-      this.bookTickets = true;
+    if(this.bookTickets){
+      this.modalService.open(confirm, {centered: true}).result.then((result: string) => {
+        if (result === 'yes') {
+          this.userService.startPayment(this.postBody)
+          .subscribe((response) => {
+            window.location.href = response['url'];
+          }, (error) => {
+            console.log(error);
+          });
+        } else {
+          console.log('no');
+        }
+      }).catch(error => {console.log(error); });
     }
-    else{
-      this.bookTickets = false;
-    }
-    
+
+    // if(this.passDetailsForm.valid){
+    //   this.bookTickets = true;
+    // }
+    // else{
+    //   this.bookTickets = false;
+    // }
   }
   add() {
       this.details.push({name: '', age: '', gender: ''});
