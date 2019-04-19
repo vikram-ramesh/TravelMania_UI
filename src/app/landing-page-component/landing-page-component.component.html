@@ -1,126 +1,127 @@
 <app-header></app-header>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link href="assets/css/slick.css" rel="stylesheet">
-    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
 
-<ngb-carousel class="space">
-  <ng-template ngbSlide>
-    <video class="setWidth" autoplay loop muted>
-      <source src="../../assets/flight_cartoon.mp4" type="video/mp4" />
-    </video>
-    <div class="carousel-caption searchCarousel">
-      <img src="../../assets/search.png"/>
-      <form [formGroup]="flightSearchForm" class="form-inline searchFormInline">
-        <div class="form-group col-sm-12 col-md-3">
-          <input id="source" type="text" class="form-control" formControlName="source" [(ngModel)]="modelSource" [ngbTypeahead]="searchSource" placeholder="Source"/>
-        </div>
-        <div class="form-group col-sm-12 col-md-3">
-            <input id="destination" type="text" class="form-control" formControlName="destination" [(ngModel)]="modelDestination" [ngbTypeahead]="searchDestination" placeholder="Destination"/>
-        </div>       
-        <div class="form-group col-sm-12 col-md-3">
-          <div class="input-group">
-            <input class="form-control" placeholder="yyyy-mm-dd" formControlName="date"
-                    name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="date" readonly>
-            <div class="input-group-append">
-              <button class="btn btn-danger" (click)="d.toggle()" type="button"><span class="fa fa-calendar"></span></button>
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link href="assets/css/slick.css" rel="stylesheet">
+<link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+
+<ngb-carousel>
+    <ng-template ngbSlide>
+      <video class="setWidth" autoplay loop muted>
+        <source src="../../assets/flight_cartoon.mp4" type="video/mp4" />
+      </video>
+      <div class="carousel-caption searchCarousel">
+        <h2 class="showHeader">Search for your flight</h2>
+        <form [formGroup]="flightSearchForm" class="form-inline searchFormInline">
+          <div class="form-group col-sm-12 col-md-3">
+            <input id="source" type="text" class="form-control" formControlName="source" [(ngModel)]="modelSource" [ngbTypeahead]="searchSource" placeholder="Source"/>
+          </div>
+          <div class="form-group col-sm-12 col-md-3">
+              <input id="destination" type="text" class="form-control" formControlName="destination" [(ngModel)]="modelDestination" [ngbTypeahead]="searchDestination" placeholder="Destination"/>
+          </div>       
+          <div class="form-group col-sm-12 col-md-3">
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd" formControlName="date"
+                      name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="date" readonly>
+              <div class="input-group-append">
+                <button class="btn btn-danger" (click)="d.toggle()" type="button"><span class="fa fa-calendar"></span></button>
+              </div>
+            </div>
+          </div>
+          <input type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Search" (click)="onSubmit()">
+        </form>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+<div class="container">  
+    <div class="searchForm">
+        <h3>Search for your flight</h3>
+        <form [formGroup]="smallForm" class="form-inline">
+            <div class="form-group col-sm-12 col-md-3">
+              <input id="source" type="text" class="form-control" formControlName="source" [(ngModel)]="modelSource" [ngbTypeahead]="searchSource" placeholder="Source"/>
+            </div>
+            <div class="form-group col-sm-12 col-md-3">
+                <input id="destination" type="text" class="form-control" formControlName="destination" [(ngModel)]="modelDestination" [ngbTypeahead]="searchDestination" placeholder="Destination"/>
+            </div> 
+            <div class="form-group col-sm-12 col-md-3">
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" formControlName="date"
+                    name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-danger" (click)="d.toggle()" type="button"><span class="fa fa-calendar"></span></button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Search" (click)="onSubmit()">Search</button>
+        </form>
+    </div>
+      
+    <span id="mu-featured-tours" class="middle space">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="mu-featured-tours-area">
+              <h2 class="cardHeader">Our most recommended events</h2>
+              <div class="mu-featured-tours-content">
+                <div class="row">
+                    <div class="cards-list">
+    
+                        <div class="card 1">
+                          <div class="card_image"> <img src="assets/magic.jpg" width="370" height="300" alt="img"> </div>
+                          <div class="card_title title-white">
+                            <p>Magic Show</p>
+                          </div>
+                        </div>
+                        
+                          <div class="card 2">
+                          <div class="card_image">
+                              <img src="assets/movie.jpg" width="370" height="300" alt="img">
+                            </div>
+                          <div class="card_title title-white">
+                            <p>Short Film Festival</p>
+                          </div>
+                        </div>
+                        
+                        <div class="card 3">
+                          <div class="card_image">
+                              <img src="assets/pottery.jpg" alt="img" width="370" height="300">
+                          </div>
+                          <div class="card_title title-white">
+                            <p>Pottery Festival</p>
+                          </div>
+                        </div>                      
+                        </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <input type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Search" (click)="onSubmit()">
-      </form>
+      </div>
+    </span>
+</div>
+
+<ngb-carousel class="space">
+  <ng-template ngbSlide>
+    <img src="../../assets/greece.jpg" alt="Random first slide" height="700px" width="1600px">
+    <div class="carousel-caption carousel">
+      <h4 class="title-white">MUMBAI - Bird Watching event on Dec 13</h4>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="../../assets/mexico.jpg" alt="Random second slide" height="700px" width="1600px">
+    <div class="carousel-caption">
+      <h4 class="title-white">BOISE - Potato Plucking event on Labour Day Weekend</h4>
     </div>
   </ng-template>
 </ngb-carousel>
 
-<form [formGroup]="smallForm" class="form-inline searchForm">
-      <div class="form-group col-sm-12 col-md-3">
-        <input id="source" type="text" class="form-control" formControlName="source" [(ngModel)]="modelSource" [ngbTypeahead]="searchSource" placeholder="Source"/>
-      </div>
-      <div class="form-group col-sm-12 col-md-3">
-          <input id="destination" type="text" class="form-control" formControlName="destination" [(ngModel)]="modelDestination" [ngbTypeahead]="searchDestination" placeholder="Destination"/>
-      </div> 
-      <div class="form-group col-sm-12 col-md-3">
-          <div class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd" formControlName="date"
-              name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-              <div class="input-group-append">
-                <button class="btn btn-danger" (click)="d.toggle()" type="button"><span class="fa fa-calendar"></span></button>
-              </div>
-          </div>
-      </div>
-      <button type="submit" class="btn btn-danger col-sm-12 col-md-3" value="Search" (click)="onSubmit()">Search</button>
-</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/slick.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script>
 
-  <span id="mu-featured-tours" class="middle space">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mu-featured-tours-area">
-            <h4 class="rec">Our most recommended events</h4>
-            <div class="mu-featured-tours-content">
-              <div class="row">
-                  <div class="cards-list">
-  
-                      <div class="card 1">
-                        <div class="card_image"> <img src="assets/magic.jpg" width="370" height="300" alt="img"> </div>
-                        <div class="card_title title-white">
-                          <p>Magic Show</p>
-                        </div>
-                      </div>
-                      
-                        <div class="card 2">
-                        <div class="card_image">
-                            <img src="assets/movie.jpg" width="370" height="300" alt="img">
-                          </div>
-                        <div class="card_title title-white">
-                          <p>Short Film Festival</p>
-                        </div>
-                      </div>
-                      
-                      <div class="card 3">
-                        <div class="card_image">
-                            <img src="assets/pottery.jpg" alt="img" width="370" height="300">
-                        </div>
-                        <div class="card_title title-white">
-                          <p>Pottery Festival</p>
-                        </div>
-                      </div>                      
-                      </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </span>
-  
-<ngb-carousel class="space">
-    <ng-template ngbSlide>
-      <img src="../../assets/greece.jpg" alt="Random first slide" height="700px" width="1600px">
-      <div class="carousel-caption">
-        <h4 style="color:blue">MUMBAI - Bird Watching event on Dec 13</h4>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <img src="../../assets/mexico.jpg" alt="Random second slide" height="700px" width="1600px">
-      <div class="carousel-caption">
-        <h4 class="title-white">BOISE - Potato Plucking event on Labour Day Weekend</h4>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <img src="../../assets/banner-bg.jpg" alt="Random third slide" height="700px" width="1600px">
-      <div class="carousel-caption">
-        <h4 style="color:blue">MELBOURNE - Top destination for surfing events</h4>
-      </div>
-    </ng-template>
-  </ngb-carousel>
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/slick.min.js"></script>
-    <script type="text/javascript" src="assets/js/app.js"></script>
-  	<script type="text/javascript" src="assets/js/custom.js"></script>
-    <app-footer></app-footer>
+<app-footer></app-footer>
