@@ -10,12 +10,35 @@ img {
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3)
 }
 
-.card{margin-top: 40px;
-      border:20px solid darkblue;
-      background-color :pink;
+.card{margin-top: 20px;
+      /* border:20px solid darkblue; */
+      background-color :black;
       box-shadow: blue;}
 
+.card-title{
+
+  color:azure;
+}
+
+pre{
+  color : azure;
+}
 button{
   box-shadow:0 15px 20px rgba(0, 0, 0, 0.3)
 
+}
+
+
+.star {
+  font-size: 1.5rem;
+  color: #b0c4de;
+}
+.filled {
+  color: #1e90ff;
+}
+.bad {
+  color: #deb0b0;
+}
+.filled.bad {
+  color: #ff1e1e;
 }
