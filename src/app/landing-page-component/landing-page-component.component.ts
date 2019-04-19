@@ -34,8 +34,6 @@ export class LandingPageComponentComponent implements OnInit {
   sourceModel: any;
   destinationModel: any;
 
-
-  
   constructor(private router: Router, private formBuilder: FormBuilder, 
               private msgService: MessageService, configTy: NgbTypeaheadConfig,private config: NgbCarouselConfig) {
     this.flightSearchForm = this.formBuilder.group({
@@ -73,16 +71,14 @@ export class LandingPageComponentComponent implements OnInit {
     this.showDropDown = !this.showDropDown;
   }
 
-
-
-  selectDestValue(value){
+  selectDestValue(value: any) {
     this.flightSearchForm.controls['destination'].setValue(value);
     this.destinationText = this.flightSearchForm.controls['destination'].value;
     this.showDropDownDest = false;
   }
 
 
-  getSearchValueDest(){
+  getSearchValueDest() {
     return this.destinationText;
   }
 
@@ -99,51 +95,51 @@ export class LandingPageComponentComponent implements OnInit {
     this.flight.layoverTime = '4h 20m';
     this.flight.price = '$1,209';
     this.flight.totalTime = '21h 10min';
+    this.flight.eventName = '';
+    this.flight.passengers = '';
   }
 
   onSubmit() {
-    if (this.flightSearchForm.value.source=="") {
-      this.flag1=false;
+    if (this.flightSearchForm.value.source === '') {
+      this.flag1 = false;
       this.source = document.getElementById('source');
       this.source.setAttribute('style', 'border:red solid 2px;');
-    } 
-    if (this.flightSearchForm.value.source!="") {
-      this.flag1=true;
+    }
+    if (this.flightSearchForm.value.source !== '') {
+      this.flag1 = true;
       this.source = document.getElementById('source');
       this.source.setAttribute('style', 'border:white solid 0px;');
-    } 
-    if(this.flightSearchForm.value.destination==""){
-      this.flag2=false;
+    }
+    if (this.flightSearchForm.value.destination === ''){
+      this.flag2 = false;
       this.destination = document.getElementById('destination');
       this.destination.setAttribute('style', 'border:red solid 2px;');
     }
-    if (this.flightSearchForm.value.destination!="") {
-      this.flag2=true;
+    if (this.flightSearchForm.value.destination !== '') {
+      this.flag2 = true;
       this.destination = document.getElementById('destination');
       this.destination.setAttribute('style', 'border:white solid 0px;');
     }
-    if(this.flightSearchForm.value.date== undefined){
-      this.flag3=false;
+    if (this.flightSearchForm.value.date === undefined) {
+      this.flag3 = false;
       this.date = document.getElementById('date');
       this.date.setAttribute('style', 'border:red solid 2px;');
     }
-    if(this.flightSearchForm.value.source == this.flightSearchForm.value.destination){
-      this.flag3=false;
-      this.destination = document.getElementById('destination');      
+    if (this.flightSearchForm.value.source === this.flightSearchForm.value.destination) {
+      this.flag3 = false;
+      this.destination = document.getElementById('destination');
       this.source.setAttribute('style', 'border:red solid 2px;');
       this.destination.setAttribute('style', 'border:red solid 2px;');
-    }
-    else{
-      this.flag3=true;
+    } else {
+      this.flag3 = true;
       this.date = document.getElementById('date');
       this.date.setAttribute('style', 'border:white solid 0px;');
-      
     }
-    if(this.flag1 && this.flag2 && this.flag3) {
+    if (this.flag1 && this.flag2 && this.flag3) {
       this.buildFlightObject();
-      this.router.navigate(['/searchResults']);
       this.msgService.sendMessage(this.flight);
       localStorage.setItem('flight', JSON.stringify(this.flight));
+      this.router.navigate(['/searchResults']);
     }
   }
 }

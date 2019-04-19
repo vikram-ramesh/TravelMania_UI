@@ -2,7 +2,6 @@ import { MessageService  } from '../services/share-flight-details.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -17,11 +16,9 @@ export class SearchResultsComponent implements OnInit {
   public isAMSCollapsed = true;
   public isDOHCollapsed = true;
   message: any;
-  subscription: Subscription;
   flights: any = [];
   userSignedIn = false;
   flightSearchForm: FormGroup;
-  
 
   constructor(private messageService: MessageService, private router: Router,
               private modalService: NgbModal, private formBuilder: FormBuilder) {
@@ -41,7 +38,7 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
-  checkLogin(testModal: any) {
+  checkEvents(testModal: any) {
     if (this.userSignedIn) {
       this.router.navigate(['/events']);
     } else {
@@ -49,7 +46,7 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
-  openModal(testModal) {
+  openModal(testModal: any) {
     this.modalService.open(testModal, {centered: true}).result.then((result) => {
       if (result === 'yes') {
         this.router.navigate(['/login']);
@@ -59,7 +56,7 @@ export class SearchResultsComponent implements OnInit {
     });
   }
 
-  bookFlight(testModal) {
+  bookFlight(testModal: any) {
     if(this.userSignedIn) {
       this.router.navigate(['/passengerDetails']);
     } else {
