@@ -24,10 +24,10 @@ export class PassengerDetailsComponent implements OnInit {
   constructor(private modalService: NgbModal, private messageService: MessageService, private userService: UserDataService,
               private router: Router, private formBuilder: FormBuilder, private http: HttpClient) {
     this.passDetailsForm = this.formBuilder.group({
-      fullName: [''],
-      age: [''],
-      email: [''],
-      contactNo: ['']
+      fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
+      age: ['', [Validators.required, Validators.pattern('[0-9]')]],
+      email: ['', [Validators.required, Validators.email]],
+      contactNo: ['', [Validators.required, Validators.pattern('[0-9]{0,10}')]]
     });
 
     this.message = this.messageService.getMessage() ? this.messageService.getMessage() : JSON.parse(localStorage.getItem('flight'));
@@ -67,6 +67,13 @@ export class PassengerDetailsComponent implements OnInit {
         console.log('no');
       }
     }).catch(error => {console.log(error); });
+    if(this.passDetailsForm.valid){
+      this.bookTickets = true;
+    }
+    else{
+      this.bookTickets = false;
+    }
+    
   }
   add() {
       this.details.push({name: '', age: '', gender: ''});
