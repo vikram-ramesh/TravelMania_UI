@@ -12,7 +12,7 @@
 
     <div class="row">
         <div class="col-sm-4 col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img ngbPopover="Located on the shores of the Arabian Gulf, overlooking its own private natural bay, Emirates Palace Hotel is located on 0.8 mi stretch of private beach." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/emirates-abu-dhabi.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Emirates,Abu Dhabi</h5>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="col-sm-4 col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img ngbPopover="Located among the hills of Rancho Santa Fe, this beautiful, natural resort features a full-service spa, golf course and top-rated tennis courts. Free Wi-Fi is available at the resort." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/rancho-valencia-resort.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Rancho Valencia</h5>
@@ -52,12 +52,12 @@
         </div>
 
         <div class="col-sm-4 col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img ngbPopover="The Westin Excelsior Rome is in fashionable Via Veneto, just over a quarter mile from Spagna Metro Station. It features luxurious decor with antique furniture and crystal chandeliers." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/The-Westin-Excelsior,-Rome.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Westin Elixir, Rome</h5>
                   <p class="card-text"></p>
-                  <button type="button"  class="btn btn-info" (click)="updateMap(40.5890642,-74.1048034)">Register</button><br>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(40.5890642,-74.1048034)">See in Map</button><br>
                   <p style = "color:azure">Rate us</p>
                   <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
                   <ngb-rating [(rate)]="currentRate">
@@ -76,7 +76,7 @@
 
     <div class="row">
         <div class="col-sm-4 col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img ngbPopover="Be sure to enjoy recreational amenities, including an indoor pool, a spa tub, and a fitness center. Additional amenities at this hotel include complimentary wireless Internet access, concierge services, and gift shops/newsstands." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/boston-marriot.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Boston Marriot,Copley</h5>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="col-sm-4 col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img ngbPopover="Hotel Belvedere is self-described as a bike hotel, meaning that it specializes in making your cycling-centric getaway as comfortable as possible (think: guided tours, top-notch equipment, tune-up services and more.) Off the saddle? Enjoy beach time, pool time, spa time – all intended to help you fully unwind." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/belvedre.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Hotel Belvedere, Italy</h5>
@@ -119,7 +119,7 @@
         </div>
 
         <div class="col-sm-4 col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card" >
                 <img ngbPopover="At Nayara Springs in Costa Rica, guests get the authentic rainforest experience with a luxury-hotel twist – think infinity pool, outdoor spa treatments, personal hosts, and neighborly toucans. Only way in and out is a footbridge that stretches above the tree canopies …not that you’d actually ever want to leave." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/nayara-springs.jpg" style="height: 158px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Nyra Springs,Costa</h5>
@@ -200,7 +200,7 @@
 <!-- <button (click)="updateMap(27.175014,78.042152)">Go To Perth</button>
 <button (click)="updateMap(-33.8688,151.2093)">Go To Sydney</button> -->
 <!-- <button (click)="reset()">Reset</button> -->
-<div #map style="margin-top:20px;margin-bottom:20px; margin-left:40px;height:400px;width:90%"></div>
+<div class="ma" #map ></div>
 
 <!-- <div class="container">
    <div class="row">
