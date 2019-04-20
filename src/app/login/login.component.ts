@@ -28,26 +28,30 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.processingStart = true;
-    const userCredentials = {
-      email: this.loginForm.controls.email.value,
-      password: this.loginForm.controls.password.value,
+    if (this.loginForm.invalid) {
+      this.message = 'Form is empty / invalid data';
+    } else {
+      const userCredentials = {
+        email: this.loginForm.controls.email.value,
+        password: this.loginForm.controls.password.value,
+      };
+      this.userService.getUser(userCredentials)
+      .subscribe((response) => {
+        this.success = true;
+        this.message = '';
+        this.router.navigate(['/home']);
+
+        sessionStorage.setItem('User', JSON.stringify(response));
+      }, (err) => {
+        this.success = false;
+        if (err.status === 401) {
+          this.message = 'Invalid Email Id / Password';
+        }
+
+        if (err.status === 400) {
+          this.message = 'User does not exist';
+        }
+      });
     }
-    this.userService.getUser(userCredentials)
-    .subscribe((response) => {
-      this.success = true;
-      this.message = '';
-      this.router.navigate(['/home']);
-
-      sessionStorage.setItem('User', JSON.stringify(response));
-    }, (err) => {
-      this.success = false;
-      if (err.status === 401) {
-        this.message = 'Invalid Email Id \ Password';
-      }
-
-      if (err.status === 400) {
-        this.message = 'User does not exist';
-      }
-    });
   }
 }
