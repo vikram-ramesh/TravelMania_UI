@@ -42,10 +42,10 @@
         </div>
         <div class="form-group col-md-1">
           <label for="inputState">Age</label>
-          <input type="text" formControlName="age" class="form-control" id="inputAge" >
+          <input type="text" formControlName="age" class="form-control" id="inputAge">
           <div *ngIf="!bookTickets" class="error">
               <div *ngIf="passDetailsForm.controls.age.errors?.required">Age is mandatory</div>
-              <div *ngIf="passDetailsForm.controls.age.errors?.pattern"> Age must contain digits and appropriate</div>
+              <div *ngIf="!bookTickets"> Age must contain appropriate values</div>
           </div>
         </div>
         <div class="form-group col-md-2">
