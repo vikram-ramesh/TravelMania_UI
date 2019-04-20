@@ -25,7 +25,7 @@ export class PassengerDetailsComponent implements OnInit {
               private router: Router, private formBuilder: FormBuilder, private http: HttpClient) {
     this.passDetailsForm = this.formBuilder.group({
       fullName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
-      age: ['', [Validators.required, Validators.pattern('[0-9]{1,2}')]],
+      age: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&’*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$")]],
       contactNo: ['', [Validators.required, Validators.pattern('[0-9]{0,10}')]]
     });
@@ -42,12 +42,9 @@ export class PassengerDetailsComponent implements OnInit {
   }
 
   onSubmit(confirm: any) {
-    if(this.passDetailsForm.valid){
-    this.bookTickets = true;
-    }
-    else{
-      this.bookTickets = false;  
-    }
+    if(this.passDetailsForm.valid && (this.passDetailsForm.controls.age.value > 0 && this.passDetailsForm.controls.age.value < 100)){
+      this.bookTickets = true;
+    
     this.message.passengers = this.details.length;
 
     this.postBody = {
@@ -73,6 +70,12 @@ export class PassengerDetailsComponent implements OnInit {
           console.log('no');
         }
       }).catch(error => {console.log(error); });
+    }}
+    else{
+      if((this.passDetailsForm.controls.age.value === "") || (this.passDetailsForm.controls.age.value <= 0 
+        || this.passDetailsForm.controls.age.value > 100))
+      this.bookTickets = false; 
+
     }
 
     // if(this.passDetailsForm.valid){
