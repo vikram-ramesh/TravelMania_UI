@@ -91,7 +91,7 @@
 			<span class="card-link"> {{message.price}} </span>
 			<span class="rightFloat">
 				<button type="button" class="btn btn-info card-link" (click)="isAUHCollapsed = !isAUHCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
-				<button type="button" class="btn btn-info card-link">Book</button>
+				<button type="submit" class="btn btn-info card-link" value="Submit" (click)="bookFlight(testModal)">Book</button>
 			</span>	
 			<div id="AUH" [ngbCollapse]="isAUHCollapsed">
 				<div class="card-text text-muted">
@@ -107,7 +107,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (AUH) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
+						{{message.layoverTime}} layover - (AUH) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkEvents(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -132,7 +132,7 @@
 			<span class="card-link"> {{message.price}} </span>
 			<span class="rightFloat">
 				<button type="button" class="btn btn-info card-link" (click)="isAMSCollapsed = !isAMSCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
-				<button type="button" class="btn btn-info card-link">Book</button>
+				<button type="submit" class="btn btn-info card-link" value="Submit" (click)="bookFlight(testModal)">Book</button>
 			</span>	
 			<div id="AMS" [ngbCollapse]="isAMSCollapsed">
 				<div class="card-text text-muted">
@@ -148,7 +148,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (AMS) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
+						{{message.layoverTime}} layover - (AMS) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkEvents(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -173,7 +173,7 @@
 			<span class="card-link"> {{message.price}} </span>
 			<span class="rightFloat">
 				<button type="button" class="btn btn-info card-link" (click)="isDOHCollapsed = !isDOHCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
-				<button type="button" class="btn btn-info card-link">Book</button>
+				<button type="submit" class="btn btn-info card-link" value="Submit" (click)="bookFlight(testModal)">Book</button>
 			</span>	
 			<div id="DOH" [ngbCollapse]="isDOHCollapsed">
 				<div class="card-text text-muted">
@@ -189,7 +189,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (DOH) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
+						{{message.layoverTime}} layover - (DOH) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkEvents(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
@@ -214,7 +214,7 @@
 			<span class="card-link"> {{message.price}} </span>
 			<span class="rightFloat">
 				<button type="button" class="btn btn-info card-link" (click)="isDXBCollapsed = !isDXBCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="DXB">Details</button>
-				<button type="button" class="btn btn-info card-link">Book</button>
+				<button type="submit" class="btn btn-info card-link" value="Submit" (click)="bookFlight(testModal)">Book</button>
 			</span>	
 			<div id="DXB" [ngbCollapse]="isDXBCollapsed">
 				<div class="card-text text-muted">
@@ -230,7 +230,7 @@
 					<div class="card-link"> <hr> </div>
 				</div>
 				<div class="card-text text-muted">
-						{{message.layoverTime}} layover - (DXB) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkLogin(testModal)">Check Events</button></span>
+						{{message.layoverTime}} layover - (DXB) <span class="rightFloat"><button type="button" class="btn btn-info card-link" (click)="checkEvents(testModal)">Check Events</button></span>
 				</div>
 				<div class="card-text text-muted">
 					<div class="card-link"> <hr> </div>
