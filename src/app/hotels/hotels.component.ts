@@ -12,7 +12,12 @@ export class HotelsComponent implements AfterViewInit {
   map: any;
   marker: any;
   zoom: number;
-  currentRate = 6;
+  currentRate1 = 6;
+  currentRate2 = 6;
+  currentRate3 = 6;
+  currentRate4 = 6;
+  currentRate5 = 6;
+  currentRate6 = 6;
   @ViewChild('map') mapRef: ElementRef;
 
   constructor() { }
