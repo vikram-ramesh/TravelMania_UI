@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="container"> 
+  <div *ngIf="processingStart && success" class="row alerts">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-sm-8 col-md-5">
+        <div class="alert alert-success" role="alert">
+            Login Successful!
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div> 
+
+  <div *ngIf="processingStart && !success" class="row alerts">
+      <div class="col-md-2"></div>
+      <div class="col-xs-12 col-sm-8 col-md-5">
+          <div class="alert alert-danger" role="alert">
+              {{message}}
+          </div>
+      </div>
+      <div class="col-md-2"></div>
+  </div> 
+
+  <div class="row centered-form">
+    <div class="col-12 col-sm-12 col-md-6">
+        <div class="panel panel-default bg-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Login</h3>
+        </div>
+        <hr>
+        <div class="panel-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <span class="fa fa-envelope col-xs-1 col-sm-1 col-md-1"></span>
+                <div class="col-xs-8 col-sm-8 col-md-10">
+                  <div class="form-group">
+                    <input type="email" formControlName="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                    <div *ngIf="processingStart && loginForm.controls.email.errors" class="error">
+                      <div *ngIf="loginForm.controls.email.errors.required"> Your Email Id is required</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+      
+            <div class="row">
+              <span class="fa fa-key col-xs-1 col-sm-1 col-md-1"></span>
+              <div class="col-xs-8 col-sm-8 col-md-10">
+                <div class="form-group">
+                  <input type="password" formControlName="password" id="password" class="form-control input-sm" placeholder="Password">
+                  <div *ngIf="processingStart && loginForm.controls.password.errors" class="error">
+                    <div *ngIf="loginForm.controls.password.errors.required"> Password is required</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <hr>
+            <div class="row">
+              <div class="col-xs-8 col-sm-8 col-md-12">
+                <input type="submit" value="Login" class="btn btn-light btn-block">
+              </div>
+            </div>        
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

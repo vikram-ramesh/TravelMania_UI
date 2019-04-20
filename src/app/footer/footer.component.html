@@ -1,27 +1,43 @@
-<section id="footer">
+<footer id="myFooter" class="space">
     <div class="container">
-      <div class="row text-center text-xs-center text-sm-left text-md-left">
-        <div class="col-xs-12 col-sm-4 col-md-4">
-          <h5>Quick links</h5>
-          <ul class="list-unstyled quick-links">
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-          </ul>
+        <div class="row">
+            <div class="col-sm-3">
+                <h2 class="logo"><a href="http://localhost:4200/"> <!--<img src="../../assets/old.jpg" height="380" width="1100"/>--> 
+                  <img src="../../assets/old.jpg" height="180" width="250"/></a></h2>
+            </div>
+            <div class="col-sm-2">
+                <h5>Get started</h5>
+                <ul>
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/aboutUs">About Us</a></li>
+                    <li><a routerLink="/contactUs">Contact us</a></li>
+                </ul>
+            </div>  
+            <div class="col-sm-2">
+                <h5>More</h5>
+                <ul>
+                    <li><a routerLink="/signUp">Sign up</a></li>
+                    <li><a routerLink="/login">Login</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h5>Support</h5>
+                <ul>
+                    <li><a target="_blank" href="https://www.onetravel.com/faq/">FAQ</a></li>
+                    <li><a target="_blank" href="https://www.tradeindia.com/Seller-5992338-TRAVEL-MANIA/">Help desk</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <div class="social-networks">
+                    <a target="_blank" href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.google.com/" class="google"><i class="fa fa-google-plus"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-          <ul class="list-unstyled list-inline social text-center">
-            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
-            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </section>
+    <div class="footer-copyright">
+        <p>© 2019 TravelMania </p>
+    </div>
+</footer>

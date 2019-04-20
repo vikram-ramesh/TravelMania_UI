@@ -1,0 +1,41 @@
+.centered-form .panel .panel-heading{
+    text-align: center;
+    padding: .5em;
+} 
+
+.centered-form .panel .panel-body{
+    margin-top: .5em;
+}
+
+hr{
+    border-color: white;
+}
+
+.centered-form{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error{
+    color: red;
+    font-size: 13px;
+}
+
+.panel{
+    box-shadow: rgba(120, 226, 240, 0.3) 20px 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.alerts{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.centered-form .panel{
+    background: rgba(13, 158, 163, 0.8);
+    float: right;
+    box-shadow: rgba(120, 226, 240, 0.3) 20px 20px 20px;
+    padding: 20px;
+}

@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="container">
+    <form [formGroup]="passDetailsForm" (ngSubmit)="onSubmit()" >
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <input type="text" formControlName="email" class="form-control" id="inputName" placeholder="email">
+          <div *ngIf="!bookTickets" class="error">
+              <div *ngIf="passDetailsForm.controls.email.errors?.required"> Email is mandatory</div>
+              <div *ngIf="passDetailsForm.controls.email.errors?.pattern"> Invalid Email Id</div>
+            </div>
+        </div>
+        
+        <div class="form-group col-md-3">
+          <input type="text" formControlName="contactNo" class="form-control" id="inputName" placeholder="contact">
+          <div *ngIf="!bookTickets" class="error">
+              <div *ngIf="passDetailsForm.controls.contactNo.errors?.required"> Contact Number is mandatory</div>
+              <div *ngIf="passDetailsForm.controls.contactNo.errors?.pattern"> Invalid Contact Number</div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-2">
+          <button class="form-control btn btn-info" (click)="add()" type="button">Add <span class="fa fa-plus"></span></button>
+        </div>
+
+        <div class="form-group col-md-2">
+            <button class="form-control btn btn-info" (click)="remove()" type="button">Remove <span class="fa fa-minus"></span></button>
+        </div>
+      </div>
+
+      <hr>
+      <h3>Enter passenger details <span class="small"><i>please enter details per passenger</i></span></h3>
+      <hr>
+      
+      <div class="form-row" *ngFor="let d of details; let i=index">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Full Name</label>
+          <input type="text" formControlName="fullName" class="form-control" id="inputName">
+          <div *ngIf="!bookTickets" class="error">
+              <div *ngIf="passDetailsForm.controls.fullName.errors?.required">Name is mandatory</div>
+              <div *ngIf="passDetailsForm.controls.fullName.errors?.pattern"> Name must contain only alphabets</div>
+          </div>
+        </div>
+        <div class="form-group col-md-1">
+          <label for="inputState">Age</label>
+          <input type="text" formControlName="age" class="form-control" id="inputAge">
+          <div *ngIf="!bookTickets" class="error">
+              <div *ngIf="passDetailsForm.controls.age.errors?.required">Age is mandatory</div>
+              <div *ngIf="!bookTickets"> Age must contain appropriate values</div>
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputZip">Gender</label>
+          <select id="inputState" class="form-control" >
+            <option selected>Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-2">
+          <button class="form-control btn btn-info" type="submit" (click)="onSubmit(confirm)">Submit</button>
+      </div>
+  </form>
+
+  <ng-template #confirm let-c="close" let-d="dismiss">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Please confirm your booking</h4>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+        <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<app-footer></app-footer>

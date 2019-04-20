@@ -1,0 +1,137 @@
+<app-header></app-header>
+
+<div class="container">
+   <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="alert alert-warning title" role="alert">
+              Spend your layover time with us! Register for any event and enjoy your journey without break.<br><br>
+              <button type="button" class="btn btn-info" (click)="warnUser(testModal)">Book this flight</button>
+          </div>
+      </div>
+   </div>
+    
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/movie.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Short Film Fest</h5>
+                  <p class="card-text">Got some free time to spare while at the airport? Visit the Granada Bar and catch some cool new short films!</p>
+                  <button type="button" *ngIf="!shortFilmRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'shortFilm')">Register</button>
+                  <button type="button" *ngIf="shortFilmRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'shortFilm')">Deregister</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/magic.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Magic Show</h5>
+                  <p class="card-text">Come enjoy the Magic Show at <strong>Terminal A, Near Gate 23</strong> from 4pm to 5pm. Free snacks! Catch all the fun!</p>
+                  <button type="button" *ngIf="!magicRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'magic')">Register</button>
+                  <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/puppet.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Puppet Show</h5>
+                  <p class="card-text">Entertain yourself at the Puppet Show, happening at <strong>Terminal 1</strong> from 2pm to 3pm. Props included for the kids.</p>
+                  <button type="button" *ngIf="!puppetRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'puppet')">Register</button>
+                  <button type="button" *ngIf="puppetRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'puppet')">Deregister</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/game.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Game Zone</h5>
+                  <p class="card-text">Catch some cool games at the Game Zone tonight at 7pm. Venue- Shop2, Alaister Walkway </p>
+                  <button type="button" *ngIf="!gameRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'game')">Register</button>
+                  <button type="button" *ngIf="gameRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'game')">Deregister</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/pottery.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pottery Tutorials</h5>
+                  <p class="card-text">Wanna get your hands dirty? Entertainment guarenteed at the pottery turorial.</p>
+                  <button type="button" *ngIf="!potteryRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'pottery')">Register</button>
+                  <button type="button" *ngIf="potteryRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'pottery')">Deregister</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/karaoke.JPG" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Karaoke Station</h5>
+                  <p class="card-text">Have some fun time at the Karaoke Session on 23rd Jan from 8pm-11pm at Lou Bar.</p>
+                  <button type="button" *ngIf="!karaokeRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'karaoke')">Register</button>
+                  <button type="button" *ngIf="karaokeRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'karaoke')">Deregister</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #testModal let-c="close" let-d="dismiss">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">You haven't registerd for any event!</h4>
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" (click)="c('yes')">No, Not interested!</button>
+          <button type="button" class="btn btn-info" (click)="c('no')">Let me check again</button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #eventModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You will be registered for this event!</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventModalError let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You have already registered for other event!</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Okay!</button>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventDeregiModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You will no longer be registered for this event!</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+          </div>
+        </div>
+    </ng-template>
+  </div>
+<app-footer></app-footer>

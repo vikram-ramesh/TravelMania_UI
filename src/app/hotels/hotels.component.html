@@ -1,0 +1,339 @@
+<app-header></app-header>
+
+<div class="container">
+   <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <header>
+              <h1>Looking for hotels in your layover time?</h1>
+              <p>Have a look at some of best hotels in the world to spend time. Relax and rejuvinate while on a break during your journey.</p><br><br>
+          </header>
+      </div>
+   </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="card" >
+                <img ngbPopover="Located on the shores of the Arabian Gulf, overlooking its own private natural bay, Emirates Palace Hotel is located on 0.8 mi stretch of private beach." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/emirates-abu-dhabi.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Emirates,Abu Dhabi</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(23.5237,53.87695)">See in Map</button><br>
+                  <p style = "color:azure">Rate us</p>
+                  <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
+                  <ngb-rating [(rate)]="currentRate1">
+                      <ng-template let-fill="fill" let-index="index">
+                          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+                    <hr>
+                    <pre>Rate: <b>{{currentRate1}}</b></pre>
+                  <!-- <button type="button" *ngIf="shortFilmRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'shortFilm')">Deregister</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="card" >
+                <img ngbPopover="Located among the hills of Rancho Santa Fe, this beautiful, natural resort features a full-service spa, golf course and top-rated tennis courts. Free Wi-Fi is available at the resort." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/rancho-valencia-resort.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Rancho Valencia</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(32.99096,-117.186134)">See in Map</button><br>
+                  <p style = "color:azure">Rate us</p>
+                  <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
+                  <ngb-rating [(rate)]="currentRate2">
+                      <ng-template let-fill="fill" let-index="index">
+                          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+                    <hr>
+                    <pre>Rate: <b>{{currentRate2}}</b></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="card" >
+                <img ngbPopover="The Westin Excelsior Rome is in fashionable Via Veneto, just over a quarter mile from Spagna Metro Station. It features luxurious decor with antique furniture and crystal chandeliers." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/The-Westin-Excelsior,-Rome.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Westin Elixir, Rome</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(40.5890642,-74.1048034)">See in Map</button><br>
+                  <p style = "color:azure">Rate us</p>
+                  <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
+                  <ngb-rating [(rate)]="currentRate3">
+                      <ng-template let-fill="fill" let-index="index">
+                          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+                    <hr>
+                    <pre>Rate: <b>{{currentRate3}}</b></pre>
+                  <!-- <button type="button" *ngIf="!puppetRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'puppet')">Register</button> -->
+                  <!-- <button type="button" *ngIf="puppetRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'puppet')">Deregister</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="card" >
+                <img ngbPopover="Be sure to enjoy recreational amenities, including an indoor pool, a spa tub, and a fitness center. Additional amenities at this hotel include complimentary wireless Internet access, concierge services, and gift shops/newsstands." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/boston-marriot.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Boston Marriot,Copley</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(42.34734,-71.07952)">See in Map</button><br>
+                  <p style = "color:azure">Rate us</p>
+                  <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
+                  <ngb-rating [(rate)]="currentRate4">
+                      <ng-template let-fill="fill" let-index="index">
+                          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+                    <hr>
+                    <pre>Rate: <b>{{currentRate4}}</b></pre>
+                  <!-- <button type="button" *ngIf="!gameRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'game')">Register</button> -->
+                  <!-- <button type="button" *ngIf="gameRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'game')">Deregister</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="card" >
+                <img ngbPopover="Hotel Belvedere is self-described as a bike hotel, meaning that it specializes in making your cycling-centric getaway as comfortable as possible (think: guided tours, top-notch equipment, tune-up services and more.) Off the saddle? Enjoy beach time, pool time, spa time – all intended to help you fully unwind." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top"class="card-img-top" src="../../assets/belvedre.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Hotel Belvedere, Italy</h5>
+                  <p class="card-text"></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(46.14189,10.96429)">See in map</button><br>
+                  <p style = "color:azure">Rate us</p>
+                  <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
+                  <ngb-rating [(rate)]="currentRate5">
+                      <ng-template let-fill="fill" let-index="index">
+                          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+                    <hr>
+                    <pre>Rate: <b>{{currentRate5}}</b></pre>
+                  <!-- <button type="button" *ngIf="!potteryRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'pottery')">Register</button> -->
+                  <!-- <button type="button" *ngIf="potteryRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'pottery')">Deregister</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="card" >
+                <img ngbPopover="At Nayara Springs in Costa Rica, guests get the authentic rainforest experience with a luxury-hotel twist – think infinity pool, outdoor spa treatments, personal hosts, and neighborly toucans. Only way in and out is a footbridge that stretches above the tree canopies …not that you’d actually ever want to leave." triggers="mouseenter:mouseleave" [openDelay]="30" [closeDelay]="50"class="card-img-top" src="../../assets/nayara-springs.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Nyra Springs,Costa</h5>
+                  <p class="card-text" ></p>
+                  <button type="button"  class="btn btn-info" (click)="updateMap(10.483359,-84.680176)">See in Map</button>
+                  <p style = "color:azure">Rate us</p>
+                  <!-- <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button> -->
+                  <ngb-rating [(rate)]="currentRate6">
+                      <ng-template let-fill="fill" let-index="index">
+                          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                      </ng-template>
+                    </ngb-rating>
+                    <hr>
+                    <pre>Rate: <b>{{currentRate6}}</b></pre>
+                  <!-- <button type="button" *ngIf="!karaokeRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'karaoke')">Register</button> -->
+                  <!-- <button type="button" *ngIf="karaokeRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'karaoke')">Deregister</button> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <ng-template #testModal let-c="close" let-d="dismiss">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">You haven't registerd for any event!</h4>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" (click)="c('yes')">No, Not interested!</button>
+          <button type="button" class="btn btn-info" (click)="c('no')">Let me check again</button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #eventModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You will be registered for this event!</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventModalError let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You have already registered for other event!</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Okay!</button>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventDeregiModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You will no longer be registered for this event!</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+          </div>
+        </div>
+    </ng-template>
+  </div>
+
+
+<!-- <p>
+  Start editing to see some magic happen :)
+</p> -->
+<!-- <button (click)="updateMap(27.175014,78.042152)">Go To Perth</button>
+<button (click)="updateMap(-33.8688,151.2093)">Go To Sydney</button> -->
+<!-- <button (click)="reset()">Reset</button> -->
+<div class="ma" #map ></div>
+
+<!-- <div class="container">
+   <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="alert alert-warning title" role="alert">
+              Spend your layover time with us! Register for any event and enjoy your journey without break.<br><br>
+              <button type="button" class="btn btn-info" (click)="warnUser(testModal)">Book this flight</button>
+          </div>
+      </div>
+   </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/movie.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Short Film Fest</h5>
+                  <p class="card-text">Got some free time to spare while at the airport? Visit the Granada Bar and catch some cool new short films!</p>
+                  <button type="button" *ngIf="!shortFilmRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'shortFilm')">Register</button>
+                  <button type="button" *ngIf="shortFilmRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'shortFilm')">Deregister</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/magic.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Magic Show</h5>
+                  <p class="card-text">Come enjoy the Magic Show at <strong>Terminal A, Near Gate 23</strong> from 4pm to 5pm. Free snacks! Catch all the fun!</p>
+                  <button type="button" *ngIf="!magicRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'magic')">Register</button>
+                  <button type="button" *ngIf="magicRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'magic')">Deregister</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/puppet.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Puppet Show</h5>
+                  <p class="card-text">Entertain yourself at the Puppet Show, happening at <strong>Terminal 1</strong> from 2pm to 3pm. Props included for the kids.</p>
+                  <button type="button" *ngIf="!puppetRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'puppet')">Register</button>
+                  <button type="button" *ngIf="puppetRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'puppet')">Deregister</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/game.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Game Zone</h5>
+                  <p class="card-text">Catch some cool games at the Game Zone tonight at 7pm. Venue- Shop2, Alaister Walkway </p>
+                  <button type="button" *ngIf="!gameRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'game')">Register</button>
+                  <button type="button" *ngIf="gameRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'game')">Deregister</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/pottery.jpg" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pottery Tutorials</h5>
+                  <p class="card-text">Wanna get your hands dirty? Entertainment guarenteed at the pottery turorial.</p>
+                  <button type="button" *ngIf="!potteryRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'pottery')">Register</button>
+                  <button type="button" *ngIf="potteryRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'pottery')">Deregister</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../assets/karaoke.JPG" style="height: 158px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Karaoke Station</h5>
+                  <p class="card-text">Have some fun time at the Karaoke Session on 23rd Jan from 8pm-11pm at Lou Bar.</p>
+                  <button type="button" *ngIf="!karaokeRegistered" class="btn btn-info" (click)="registerEvent(eventModal, eventModalError, 'karaoke')">Register</button>
+                  <button type="button" *ngIf="karaokeRegistered" class="btn btn-info" (click)="deregisterEvent(eventDeregiModal, 'karaoke')">Deregister</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #testModal let-c="close" let-d="dismiss">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">You haven't registerd for any event!</h4>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" (click)="c('yes')">No, Not interested!</button>
+          <button type="button" class="btn btn-info" (click)="c('no')">Let me check again</button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #eventModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You will be registered for this event!</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventModalError let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You have already registered for other event!</h4>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Okay!</button>
+          </div>
+        </div>
+    </ng-template>
+
+    <ng-template #eventDeregiModal let-c="close" let-d="dismiss">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">You will no longer be registered for this event!</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" (click)="c('yes')">Confirm!</button>
+            <button type="button" class="btn btn-info" (click)="c('no')">Wait!</button>
+          </div>
+        </div>
+    </ng-template>
+  </div> -->
+<app-footer></app-footer>

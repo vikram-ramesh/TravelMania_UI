@@ -1,0 +1,39 @@
+@import "https://fonts.googleapis.com/css?family=Tangerine";
+.centered-form{
+    margin: 0 auto;
+    float: none;
+}
+
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(120, 226, 240, 0.3) 20px 20px 20px;
+    
+    padding: 20px;
+}
+
+.centered-form .panel .panel-heading{
+    text-align: center;
+    padding: .5em;
+}
+
+.centered-form .panel .panel-body{
+    margin-top: .5em;
+}
+
+.error{
+    color: red;
+    font-size: 13px;
+}
+
+form h5{
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+img{
+    border-radius: 45%;
+    height: 80px;
+}

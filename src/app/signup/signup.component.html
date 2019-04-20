@@ -1,0 +1,108 @@
+<app-header></app-header>
+<div class="container">
+  <div *ngIf="success" class="row alerts">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-sm-8 col-md-5">
+        <div class="alert alert-success" role="alert">
+            You are successfully registerd!
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>  
+  <div *ngIf="processingStart && !success" class="row alerts">
+      <div class="col-md-2"></div>
+      <div class="col-xs-12 col-sm-8 col-md-5">
+          <div class="alert alert-danger" role="alert">
+              {{message}}
+          </div>
+      </div>
+      <div class="col-md-2"></div>
+  </div> 
+
+  <div class="row centered-form">
+      <div class="col-12 col-sm-12 col-md-6">
+          <div class="panel panel-default bg-info">
+            <h3 class="panel-title">Sign Up</h3>
+            <hr>
+            <div class="panel-body">
+              <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                  <div class="row">
+                    <span class="fa fa-user col-sm-2 col-form-label"></span>
+                    <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
+                      <div class="form-group">
+                        <input type="text" formControlName="firstName" id="first_name" class="form-control input-sm" placeholder="First Name">
+                        <div *ngIf="processingStart && signupForm.controls.firstName.errors" class="error">
+                          <div *ngIf="signupForm.controls.firstName.errors.required">Firstname is mandatory</div>
+                          <div *ngIf="signupForm.controls.firstName.errors.pattern"> First Name must contain only alphabets</div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+
+                  <div class="row">
+                      <span class="fa fa-user col-sm-2 col-form-label"></span>
+                      <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
+                      <div class="form-group">
+                        <input type="text" formControlName="lastName" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                        <div *ngIf="processingStart && signupForm.controls.lastName.errors" class="error">
+                          <div *ngIf="signupForm.controls.lastName.errors.required">Lastname is mandatory</div>
+                          <div *ngIf="signupForm.controls.lastName.errors.pattern"> Last Name must contain only alphabets</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <span class="fa fa-envelope col-sm-2 col-form-label"></span>
+                      <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                          <input type="email" formControlName="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                          <div *ngIf="processingStart && signupForm.controls.email.errors" class="error">
+                            <div *ngIf="signupForm.controls.email.errors.required"> Email is mandatory</div>
+                            <div *ngIf="signupForm.controls.email.errors.email"> Invalid Email Id</div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <span class="fa fa-key col-sm-2 col-form-label"></span>
+                    <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
+                      <div class="form-group">
+                        <input type="password" formControlName="password" id="password" class="form-control input-sm" placeholder="Password">
+                        <div *ngIf="processingStart && signupForm.controls.password.errors" class="error">
+                          <div *ngIf="signupForm.controls.password.errors.required"> Password is mandatory</div>
+                          <div *ngIf="signupForm.controls.password.errors.pattern"> Password must: 8 character long, [A-Z], [0-9] and Symbols</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="row">
+                  <span class="fa fa-key col-sm-2 col-form-label"></span>
+                  <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
+                    <div class="form-group">
+                      <input type="password" formControlName="repassword" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                      <div *ngIf="processingStart && signupForm.controls.repassword.errors" class="error">
+                        <div *ngIf="signupForm.controls.repassword.errors? signupForm.controls.repassword.errors.required : false"> Confirm your password</div>
+                      </div>
+                      <div *ngIf="processingStart && signupForm['errors']" class="error">
+                        <div *ngIf="signupForm['errors']? signupForm['errors']['notSame'] : false">Passwords do not match</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>     
+                
+                <hr>
+                <div class="row">
+                  <div class="col-xs-8 col-sm-8 col-md-12">
+                      <input type="submit" value="Register" class="btn btn-light btn-block">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<app-footer></app-footer>
