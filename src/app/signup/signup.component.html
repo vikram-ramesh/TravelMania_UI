@@ -53,6 +53,19 @@
                   </div>
 
                   <div class="row">
+                      <span class="fa fa-envelope col-sm-2 col-form-label"></span>
+                      <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                          <input type="email" formControlName="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                          <div *ngIf="processingStart && signupForm.controls.email.errors" class="error">
+                            <div *ngIf="signupForm.controls.email.errors.required"> Email is mandatory</div>
+                            <div *ngIf="signupForm.controls.email.errors.email"> Invalid Email Id</div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
                     <span class="fa fa-key col-sm-2 col-form-label"></span>
                     <div class="col-xs-6 col-sm-6 col-md-8 col-md-offset-2">
                       <div class="form-group">
