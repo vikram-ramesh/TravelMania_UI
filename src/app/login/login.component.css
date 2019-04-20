@@ -1,8 +1,3 @@
-/* .middle{
-    margin-left: 350px;
-    height: 380px;
-} */
-
 .centered-form .panel .panel-heading{
     text-align: center;
     padding: .5em;
@@ -15,6 +10,7 @@
 hr{
     border-color: white;
 }
+
 .centered-form{
     margin: 0 auto;
     text-align: center;
